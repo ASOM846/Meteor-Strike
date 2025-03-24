@@ -6,7 +6,6 @@ Simple c++ and raylib game.
 
 <p align="center">
   <img src="screenshoots/1.jpg" alt="" width="800">
-  <img src="screenshoots/2.jpg" alt="" width="800">
 </p>
 
 <p align="center">
