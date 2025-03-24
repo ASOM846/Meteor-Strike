@@ -3,20 +3,20 @@
 Spaceship::Spaceship()
     : width(50), height(50), useSounds(true)
 {
-    x = 1920 / 2; // Ustaw x na ?rodek ekranu
-    y = 1080 - 200; // Ustaw y 50 pikseli nad doln¤ kraw?dzi¤
+    x = 1920 / 2;
+    y = 1080 - 200;
 }
 
 Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound)
     : width(50), height(50), texture(shipTexture), laserTexture(laserTexture), laserSound(laserSound), useSounds(true)
 {
-    x = 1920 / 2; // Ustaw x na ?rodek ekranu
-    y = 1080 - 200; // Ustaw y 50 pikseli nad doln¤ kraw?dzi¤
+    x = 1920 / 2;
+    y = 1080 - 200;
 }
 
 Spaceship::~Spaceship()
 {
-    // Nie zwalniamy tekstur i d®wi?kôw, poniewa– s¤ one zwalniane w klasie Game
+    // Nie zwalniamy tekstur i d«wi©k¢w, poniewa¾ s¥ one zwalniane w klasie Game
 }
 
 void Spaceship::Update()
@@ -27,42 +27,55 @@ void Spaceship::Update()
     {
         laser.Update();
     }
+
+    if (shieldActive && GetTime() > shieldEndTime) {
+        shieldActive = false;
+        shieldCooldown = 10.0; // Ustaw czas odnowienia tarczy po jej wyˆ¥czeniu
+    }
+
+    if (!shieldActive && shieldCooldown > 0) {
+        shieldCooldown -= GetFrameTime();
+    }
 }
 
 void Spaceship::Draw(bool useGraphics)
 {
     if (useGraphics) {
-        DrawTexture(texture, x - 25, y, WHITE); // Rysuj statek kosmiczny z tekstur¥
+        DrawTexture(texture, x - 25, y, WHITE);
     }
     else {
-        // Rysuj statek kosmiczny jako prostok¥t z tr¢jk¥tem na g¢rze
-        DrawRectangle(x - width / 2, y, width, height, BLUE); // Rysuj prostok¥t
+        DrawRectangle(x - width / 2, y, width, height, BLUE);
         DrawTriangle(
-            Vector2{ (float)x, (float)(y - height / 2) }, // Wierzchoˆek tr¢jk¥ta
-            Vector2{ (float)(x - width / 2), (float)y },  // Lewy dolny r¢g tr¢jk¥ta
-            Vector2{ (float)(x + width / 2), (float)y },  // Prawy dolny r¢g tr¢jk¥ta
+            Vector2{ (float)x, (float)(y - height / 2) },
+            Vector2{ (float)(x - width / 2), (float)y },
+            Vector2{ (float)(x + width / 2), (float)y },
             BLUE
-        ); // Rysuj tr¢jk¥t na g¢rze
+        );
     }
+
+    if (shieldActive) {
+        DrawCircle(x, y + height / 2, width, Fade(BLUE, 0.3f)); // Rysuj tarcz©
+    }
+
     for (auto& laser : lasers)
     {
-        laser.Draw(useGraphics); // Przeka¾ parametr useGraphics do metody Draw lasera
+        laser.Draw(useGraphics);
     }
 }
 
 void Spaceship::FireLaser(bool useGraphics, bool useSounds)
 {
     double currentTime = GetTime();
-    if (currentTime - lastFireTime >= 0.5) // Ograniczenie strza?ôw do jednego na 0.5 sekundy
+    if (currentTime - lastFireTime >= 0.5)
     {
         if (useGraphics) {
-            lasers.emplace_back(x + width / 2, y, laserTexture); // Przesu„ strza? troch? w lewo, gdy grafiki s¤ w?¤czone
+            lasers.emplace_back(x + width / 2, y, laserTexture);
         }
         else {
-            lasers.emplace_back(x + width / 2 - 25, y); // Strzelaj ze ?rodka, gdy grafiki s¤ wy?¤czone
+            lasers.emplace_back(x + width / 2 - 25, y);
         }
-        if (this->useSounds) { // U–yj zmiennej cz?onkowskiej
-            PlaySound(laserSound); // Odtwôrz d®wi?k lasera, gdy d®wi?ki s¤ w?¤czone
+        if (this->useSounds) {
+            PlaySound(laserSound);
         }
         lastFireTime = currentTime;
     }
@@ -70,26 +83,59 @@ void Spaceship::FireLaser(bool useGraphics, bool useSounds)
 
 std::vector<Laser>& Spaceship::GetLasers()
 {
-    return lasers; // Zwrô? referencj? do wektora laserôw
+    return lasers;
 }
 
 void Spaceship::Move()
 {
-    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)) x += 7;
-    if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A)) x -= 7;
+    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)) x += speed;
+    if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A)) x -= speed;
 }
 
 void Spaceship::CheckIfOffScreen()
 {
-    if (x + width > 1920) x = 0; // Teleportuj na lew¤ kraw?d®
-    if (x < 0) x = 1920 - width; // Teleportuj na praw¤ kraw?d®
+    if (x + width > 1920) x = 0;
+    if (x < 0) x = 1920 - width;
 }
 
 Rectangle Spaceship::GetRect() const
 {
-    return Rectangle{ (float)x, (float)y, (float)width, (float)height }; // Zwrô? prostok¤t reprezentuj¤cy hitboks statku
+    return Rectangle{ (float)x, (float)y, (float)width, (float)height };
 }
 
 void Spaceship::SetUseSounds(bool useSounds) {
     this->useSounds = useSounds;
+}
+
+void Spaceship::IncreaseSpeed() {
+    speed += 2;
+}
+
+void Spaceship::DecreaseSpeed() {
+    speed -= 2;
+}
+
+int Spaceship::GetSpeed() const {
+    return speed;
+}
+
+void Spaceship::ActivateShield() {
+    shieldActive = true;
+    shieldEndTime = GetTime() + shieldDuration;
+}
+
+bool Spaceship::IsShieldActive() const {
+    return shieldActive;
+}
+
+void Spaceship::IncreaseShieldTime() {
+    shieldDuration += 2.0;
+}
+
+int Spaceship::GetShieldLevel() const {
+    return static_cast<int>((shieldDuration - 5.0) / 2.0) + 1;
+}
+
+double Spaceship::GetShieldCooldown() const {
+    return shieldCooldown;
 }

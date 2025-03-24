@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\spaceship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\spaceship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\asteroid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -31,16 +19,28 @@
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\button.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\button.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\asteroid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\spaceship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\spaceship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\asteroid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,31 +62,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "game.cpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.cpp",
-              "RelativeDocumentMoniker": "src\\game.cpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.cpp",
-              "RelativeToolTip": "src\\game.cpp",
-              "ViewState": "AgIAADsAAAAAAAAAAADwv0YAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T15:32:39.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "game.hpp",
               "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.hpp",
               "RelativeDocumentMoniker": "src\\game.hpp",
               "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.hpp",
               "RelativeToolTip": "src\\game.hpp",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAuwCIAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwDIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T15:32:40.85Z"
+              "WhenOpened": "2025-03-23T15:32:40.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "game.cpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.cpp",
+              "RelativeDocumentMoniker": "src\\game.cpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.cpp",
+              "RelativeToolTip": "src\\game.cpp",
+              "ViewState": "AgIAABoBAAAAAAAAAADwvz8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-23T15:32:39.387Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\main.cpp",
+              "RelativeDocumentMoniker": "src\\main.cpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\main.cpp",
+              "RelativeToolTip": "src\\main.cpp",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAuwA8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-23T15:24:31.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "laser.cpp",
               "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.cpp",
               "RelativeDocumentMoniker": "src\\laser.cpp",
@@ -98,44 +113,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "spaceship.hpp",
               "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.hpp",
               "RelativeDocumentMoniker": "src\\spaceship.hpp",
               "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.hpp",
               "RelativeToolTip": "src\\spaceship.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T15:28:31.15Z"
+              "WhenOpened": "2025-03-23T15:28:31.15Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "spaceship.cpp",
               "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.cpp",
               "RelativeDocumentMoniker": "src\\spaceship.cpp",
               "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.cpp",
               "RelativeToolTip": "src\\spaceship.cpp",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAA0AAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAuwI0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-23T15:28:28.561Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "button.cpp",
               "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\button.cpp",
               "RelativeDocumentMoniker": "src\\button.cpp",
               "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\button.cpp",
               "RelativeToolTip": "src\\button.cpp",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T16:38:15.917Z"
+              "WhenOpened": "2025-03-23T16:38:15.917Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "button.hpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\button.hpp",
+              "RelativeDocumentMoniker": "src\\button.hpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\button.hpp",
+              "RelativeToolTip": "src\\button.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-23T16:38:17.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "asteroid.hpp",
               "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.hpp",
               "RelativeDocumentMoniker": "src\\asteroid.hpp",
@@ -143,43 +173,21 @@
               "RelativeToolTip": "src\\asteroid.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T15:28:34.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\main.cpp",
-              "RelativeDocumentMoniker": "src\\main.cpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\main.cpp",
-              "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAADYAAAAAAAAAAAAuwEMAAABwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T15:24:31.289Z"
+              "WhenOpened": "2025-03-23T15:28:34.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "button.hpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\button.hpp",
-              "RelativeDocumentMoniker": "src\\button.hpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\button.hpp",
-              "RelativeToolTip": "src\\button.hpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC0AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T16:38:17.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "asteroid.cpp",
               "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.cpp",
               "RelativeDocumentMoniker": "src\\asteroid.cpp",
               "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.cpp",
               "RelativeToolTip": "src\\asteroid.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T15:28:36.36Z"
+              "WhenOpened": "2025-03-23T15:28:36.36Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

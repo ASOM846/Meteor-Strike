@@ -8,27 +8,43 @@
 class Spaceship {
 public:
     Spaceship();
-    Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound); // Dodaj nowy konstruktor
+    Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound);
     ~Spaceship();
 
     void Update();
-    void Draw(bool useGraphics); // Dodaj parametr useGraphics
-    void FireLaser(bool useGraphics, bool useSounds); // Dodaj parametry useGraphics i useSounds
+    void Draw(bool useGraphics);
+    void FireLaser(bool useGraphics, bool useSounds);
     std::vector<Laser>& GetLasers();
     Rectangle GetRect() const;
-    void SetUseSounds(bool useSounds); // Dodaj metod? do ustawiania u–ycia d®wi?kôw
+    void SetUseSounds(bool useSounds);
+
+    void IncreaseSpeed();
+    void DecreaseSpeed();
+    int GetSpeed() const;
+
+    void ActivateShield();
+    bool IsShieldActive() const;
+    void IncreaseShieldTime();
+    int GetShieldLevel() const;
+    double GetShieldCooldown() const; // Dodaj metod© do pobierania czasu odnowienia tarczy
 
 private:
     int x;
     int y;
     int width;
     int height;
+    int speed = 7;
     std::vector<Laser> lasers;
     double lastFireTime = 0.0;
-    Texture2D texture; // Dodaj zmienn¤ do przechowywania tekstury statku
-    Texture2D laserTexture; // Dodaj zmienn¤ do przechowywania tekstury lasera
-    Sound laserSound; // Dodaj zmienn¤ do przechowywania d®wi?ku lasera
-    bool useSounds; // Dodaj zmienn¤ do przechowywania stanu d®wi?kôw
+    Texture2D texture;
+    Texture2D laserTexture;
+    Sound laserSound;
+    bool useSounds;
+
+    bool shieldActive = false;
+    double shieldEndTime = 0.0;
+    double shieldDuration = 5.0;
+    double shieldCooldown = 10.0; // Dodaj zmienn¥ do przechowywania czasu odnowienia tarczy
 
     void Move();
     void CheckIfOffScreen();

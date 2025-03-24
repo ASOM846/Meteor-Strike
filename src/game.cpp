@@ -3,6 +3,7 @@
 #include "asteroid.hpp"
 #include "laser.hpp"
 #include <raylib.h>
+#include <fstream>
 
 Game::Game(int* gameMode) : gameMode(gameMode), asteroidSpawnTimer(0.0f), asteroidSpawnInterval(GetRandomValue(0.5f, 1.5f))
 {
@@ -26,6 +27,9 @@ void Game::Update()
     if (IsKeyPressed(KEY_SPACE)) {
         spaceship.FireLaser(useShipGraphics, useSounds);
     }
+    if (IsKeyPressed(KEY_S) && shieldPurchased && GetShieldCooldown() <= 0) { // Klawisz do aktywacji tarczy
+        spaceship.ActivateShield();
+    }
     for (auto& asteroid : asteroids)
     {
         asteroid.Update();
@@ -44,6 +48,14 @@ void Game::Draw()
         asteroid.Draw(useAsteroidGraphics);
     }
     DisplayLives();
+    DisplayScore();
+    DisplayHighScore();
+    DisplayMoney();
+
+    // Wy?wietlanie wska®nika czasu odnowienia tarczy
+    if (shieldPurchased) {
+        DrawText(TextFormat("Shield Cooldown: %.1f", GetShieldCooldown()), 10, 50, 30, YELLOW);
+    }
 }
 
 void Game::InitializeAsteroids(int count)
@@ -79,6 +91,10 @@ void Game::CheckCollisions()
                 if (asteroid.IsHpUp()) {
                     lives++;
                 }
+                else {
+                    score++;
+                    money += 10;
+                }
                 asteroid.Deactivate();
                 laser.active = false;
                 break;
@@ -87,6 +103,11 @@ void Game::CheckCollisions()
 
         if (CheckCollisionRecs(asteroid.GetRect(), spaceship.GetRect()))
         {
+            if (spaceship.IsShieldActive()) {
+                asteroid.Deactivate();
+                continue;
+            }
+
             if (asteroid.IsHpUp()) {
                 lives++;
             }
@@ -107,6 +128,10 @@ void Game::CheckCollisions()
 void Game::GameOver()
 {
     StopCheckEngineSound();
+    if (score > highScore) {
+        highScore = score;
+        SaveStuffToFile();
+    }
     *gameMode = 0;
     Reset();
 }
@@ -114,13 +139,48 @@ void Game::GameOver()
 void Game::Reset()
 {
     lives = 3;
+    score = 0;
     asteroids.clear();
     InitializeAsteroids(5);
 }
 
 void Game::DisplayLives()
 {
-    DrawText(TextFormat("Lives: %i", lives), 10, 10, 60, WHITE);
+    DrawText(TextFormat("Lives: %i", lives), 10, 10, 30, WHITE);
+}
+
+void Game::DisplayScore()
+{
+    DrawText(TextFormat("Score: %i", score), 200, 10, 30, WHITE);
+}
+
+void Game::DisplayHighScore()
+{
+    DrawText(TextFormat("High Score: %i", highScore), 400, 10, 30, WHITE);
+}
+
+void Game::DisplayMoney() {
+    DrawText(TextFormat("Money: %i", money), 700, 10, 30, WHITE);
+}
+
+int Game::GetHighScore() const {
+    return highScore;
+}
+
+int Game::GetMoney() const {
+    return money;
+}
+
+int Game::GetSpeedLevel() const {
+    return (spaceship.GetSpeed() - 7) / 2 + 1;
+}
+
+int Game::GetShieldLevel() const {
+    return spaceship.GetShieldLevel();
+}
+
+double Game::GetShieldCooldown() const {
+    return spaceship.GetShieldCooldown();
 }
 
 void Game::LoadTextures()
@@ -139,7 +199,7 @@ void Game::LoadTextures()
     Asteroid::smallTexture2 = LoadTexture("graphics/meteorGrey_small2.png");
     Asteroid::tinyTexture1 = LoadTexture("graphics/meteorGrey_tiny1.png");
     Asteroid::tinyTexture2 = LoadTexture("graphics/meteorGrey_tiny2.png");
-    Asteroid::hpUpTexture = LoadTexture("graphics/hpUp.png"); // Zaˆaduj tekstur© hpUp
+    Asteroid::hpUpTexture = LoadTexture("graphics/hpUp.png");
 }
 
 void Game::UnloadTextures()
@@ -158,7 +218,7 @@ void Game::UnloadTextures()
     UnloadTexture(Asteroid::smallTexture2);
     UnloadTexture(Asteroid::tinyTexture1);
     UnloadTexture(Asteroid::tinyTexture2);
-    UnloadTexture(Asteroid::hpUpTexture); // Zwolnij tekstur© hpUp
+    UnloadTexture(Asteroid::hpUpTexture);
 }
 
 void Game::SetUseShipGraphics(bool use)
@@ -189,4 +249,71 @@ void Game::PlayCheckEngineSound()
 void Game::StopCheckEngineSound()
 {
     StopSound(checkEngineSound);
+}
+
+void Game::SaveStuffToFile()
+{
+    std::ofstream file("save.txt");
+    if (file.is_open()) {
+        file << highScore << std::endl;
+        file << money << std::endl;
+        file << GetSpeedLevel() << std::endl;
+        file << GetShieldLevel() << std::endl;
+        file << shieldPurchased << std::endl;
+        file.close();
+    }
+}
+
+void Game::LoadStuffFromFile()
+{
+    std::ifstream file("save.txt");
+    if (file.is_open()) {
+        int speedLevel, shieldLevel;
+        file >> highScore;
+        file >> money;
+        file >> speedLevel;
+        file >> shieldLevel;
+        file >> shieldPurchased;
+        file.close();
+
+        // Ustaw poziomy ulepsze„
+        for (int i = 1; i < speedLevel; ++i) {
+            spaceship.IncreaseSpeed();
+        }
+        for (int i = 1; i < shieldLevel; ++i) {
+            spaceship.IncreaseShieldTime();
+        }
+    }
+}
+
+void Game::PurchaseShield()
+{
+    if (money >= 500) { // Zwi?ksz koszt zakupu tarczy
+        money -= 500;
+        shieldPurchased = true;
+    }
+}
+
+void Game::UpgradeShieldTime()
+{
+    if (money >= 300) { // Zwi?ksz koszt ulepszenia czasu tarczy
+        money -= 300;
+        spaceship.IncreaseShieldTime();
+    }
+}
+
+void Game::UpgradeSpeed()
+{
+    if (money >= 200 && GetSpeedLevel() < 5) { // Zwi?ksz koszt ulepszenia pr?dko?ci
+        money -= 200;
+        spaceship.IncreaseSpeed();
+    }
+}
+
+void Game::DowngradeSpeed()
+{
+    if (spaceship.GetSpeed() > 7) {
+        money += 100; // Zwi?ksz zwrot pieni?dzy za obni–enie pr?dko?ci
+        spaceship.DecreaseSpeed();
+    }
 }

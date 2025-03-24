@@ -1,7 +1,42 @@
-﻿  Trwa generowanie kodu
-  6 of 287 functions ( 2.1%) were compiled, the rest were copied from previous compilation.
+﻿  game.cpp
+  main.cpp
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(7,118): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(7,112): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(7,96): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(67,54): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(67,48): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(67,47): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(35,64): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(35,40): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(36,67): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(36,43): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(37,63): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(37,39): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(40,61): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(40,37): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(41,71): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(41,47): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(42,75): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(42,51): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(43,65): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(43,41): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(44,69): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(44,45): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(45,69): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(45,45): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(60,96): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(61,102): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(62,94): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(64,90): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(65,110): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(66,118): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(67,98): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(68,106): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\main.cpp(69,106): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  Trwa generowanie kodu
+  32 of 370 functions ( 8.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    5 functions had inline decision re-evaluated but remain unchanged
+    11 functions had inline decision re-evaluated but remain unchanged
   Zakończono generowanie kodu
   Raylib Starter Template.vcxproj -> C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\x64\Release\Meteor-Strike.exe
   'pwsh.exe' is not recognized as an internal or external command,
