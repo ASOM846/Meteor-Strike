@@ -1,0 +1,49 @@
+﻿  asteroid.cpp
+  main.cpp
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(16,8): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(17,6): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(18,10): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(75,13): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(76,27): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(77,31): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(86,37): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(86,34): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(90,44): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(90,37): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(90,34): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(90,31): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(93,44): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(93,37): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(93,34): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(93,31): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(34,64): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(34,40): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(35,67): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(35,43): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(36,63): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(36,39): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(39,61): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(39,37): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(40,71): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(40,47): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(41,75): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(41,51): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(42,65): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(42,41): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(43,69): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(43,45): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(44,69): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(44,45): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(59,96): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(60,102): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(61,94): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(63,90): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(64,110): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(65,118): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(66,98): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(67,106): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(68,106): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  Generowanie kodu...
+  Raylib Starter Template.vcxproj -> C:\Users\Antoni Janik\Desktop\ship\x64\Debug\Raylib Starter Template.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

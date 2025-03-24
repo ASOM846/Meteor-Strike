@@ -1,0 +1,22 @@
+﻿#ifndef ASTEROID_HPP
+#define ASTEROID_HPP
+
+class Asteroid {
+public:
+    Asteroid();
+    ~Asteroid();
+
+    void Update();
+    void Draw();
+
+private:
+    void Move();
+    void InitializeAtTop();
+
+    float x, y;
+    float width, height;
+    float timeToLive; // Dodano zmienną timeToLive
+    float elapsedTime; // Dodano zmienną elapsedTime
+};
+
+#endif // ASTEROID_HPP

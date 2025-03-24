@@ -1,0 +1,49 @@
+﻿#include "game.hpp"
+
+Game::Game() : asteroidSpawnTimer(0.0f), asteroidSpawnInterval(GetRandomValue(1, 3)) // Losowy interwa od 1 do 3 sekund
+{
+    InitializeAsteroids(5); // Inicjalizuj 5 asteroid
+}
+
+Game::~Game()
+{
+}
+
+void Game::Update()
+{
+    spaceship.Update();
+    for (auto& asteroid : asteroids)
+    {
+        asteroid.Update();
+    }
+    UpdateAsteroidSpawn(); // Aktualizuj generowanie asteroid
+}
+
+void Game::Draw()
+{
+    spaceship.Draw();
+    for (auto& asteroid : asteroids)
+    {
+        asteroid.Draw();
+    }
+}
+
+void Game::InitializeAsteroids(int count)
+{
+    for (int i = 0; i < count; ++i)
+    {
+        asteroids.emplace_back(); // Dodaj nowĄ asteroid© do wektora
+    }
+}
+
+void Game::UpdateAsteroidSpawn()
+{
+    asteroidSpawnTimer += GetFrameTime(); // Aktualizuj licznik czasu
+
+    if (asteroidSpawnTimer >= asteroidSpawnInterval)
+    {
+        asteroids.emplace_back(); // Dodaj nowĄ asteroid© do wektora
+        asteroidSpawnTimer = 0.0f; // Zresetuj licznik czasu
+        asteroidSpawnInterval = GetRandomValue(1, 3); // Ustaw nowy losowy interwa
+    }
+}

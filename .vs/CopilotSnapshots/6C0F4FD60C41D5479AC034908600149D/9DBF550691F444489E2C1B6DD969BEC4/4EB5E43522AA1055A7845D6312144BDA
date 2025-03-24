@@ -1,0 +1,19 @@
+﻿#ifndef GAME_HPP
+#define GAME_HPP
+
+#include <raylib.h>
+#include "spaceship.hpp"
+
+class Game {
+public:
+    Game();
+    ~Game();
+
+    void Update();
+    void Draw();
+
+private:
+    Spaceship spaceship;
+};
+
+#endif // GAME_HPP

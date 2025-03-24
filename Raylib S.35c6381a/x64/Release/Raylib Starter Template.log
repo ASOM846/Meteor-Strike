@@ -1,0 +1,110 @@
+﻿  raylibLogo.cpp
+  asteroid.cpp
+  button.cpp
+  game.cpp
+  laser.cpp
+  main.cpp
+  menu.cpp
+  spaceship.cpp
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(16,8): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(17,6): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(18,10): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\laser.cpp(30,59): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\laser.cpp(30,36): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\laser.cpp(33,36): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\laser.cpp(33,29): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(75,13): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(76,27): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(77,31): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(86,37): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(86,34): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(90,44): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(90,37): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(90,34): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(90,31): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(93,44): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(93,37): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(93,34): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\asteroid.cpp(93,31): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(7,118): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(7,112): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(7,96): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(65,54): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(65,48): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(65,47): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  (kompilowanie pliku źródłowego „src/spaceship.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103):
+      kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
+          C:\Users\Antoni Janik\Desktop\ship\src\spaceship.cpp(59,20):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „void std::vector<Laser,std::allocator<Laser>>::emplace_back<int,int&,Texture2D&>(int &&,int &,Texture2D &)” funkcji szablon
+              C:\Users\Antoni Janik\Desktop\ship\src\spaceship.cpp(59,32):
+              zobacz pierwsze odwołanie do elementu „std::vector<Laser,std::allocator<Laser>>::emplace_back” w „Spaceship::FireLaser”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(909,24):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<int,int&,Texture2D&>(int &&,int &,Texture2D &)” funkcji szablon
+          with
+          [
+              _Ty=Laser
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(830,20):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<int,int&,Texture2D&>(int &&,int &,Texture2D &)” funkcji szablon
+          with
+          [
+              _Ty=Laser
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(848,27):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int,int&,Texture2D&>(_Alloc &,_Objty *const ,int &&,int &,Texture2D &)” funkcji szablon
+          with
+          [
+              _Alloc=std::allocator<Laser>,
+              _Ty=Laser,
+              _Objty=Laser
+          ]
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244: "argument": konwersja z "_Ty" do "float", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244:         ]
+  (kompilowanie pliku źródłowego „src/spaceship.cpp”)
+  
+C:\Users\Antoni Janik\Desktop\ship\src\button.cpp(17,32): warning C4244: "argument": konwersja z "const float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\button.cpp(17,25): warning C4244: "argument": konwersja z "const float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\button.cpp(17,22): warning C4244: "argument": konwersja z "const float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\button.cpp(17,19): warning C4244: "argument": konwersja z "const float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\button.cpp(22,15): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\button.cpp(23,15): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(34,64): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(34,40): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(35,67): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(35,43): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(36,63): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(36,39): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(39,61): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(39,37): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(40,71): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(40,47): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(41,75): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(41,51): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(42,65): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(42,41): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(43,69): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(43,45): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(44,69): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(44,45): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(59,96): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(60,102): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(61,94): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(63,90): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(64,110): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(65,118): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(66,98): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(67,106): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\main.cpp(68,106): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  Trwa generowanie kodu
+  Previous IPDB not found, fall back to full compilation.
+  All 287 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Zakończono generowanie kodu
+  Raylib Starter Template.vcxproj -> C:\Users\Antoni Janik\Desktop\ship\x64\Release\Raylib Starter Template.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

@@ -1,0 +1,74 @@
+﻿#include <iostream>
+#include <raylib.h>
+#include "game.hpp"
+
+using namespace std;
+
+void ShowMenu() {
+    cout << "1. Start Game" << endl;
+    cout << "2. Exit" << endl;
+}
+
+int main() {
+    Color Dark_Green = Color{ 20, 160, 133, 255 };
+    Color Yellow = Color{ 255, 255, 0, 255 };
+
+    int gameMode = 0;
+
+    const int renderWidth = 1920;
+    const int renderHeight = 1080;
+    const int screenWidth = 1280;
+    const int screenHeight = 720;
+
+    cout << "Hello World" << endl;
+
+    InitWindow(screenWidth, screenHeight, "ASTEROID SHOOTER");
+
+    SetWindowSize(screenWidth, screenHeight);
+    SetWindowPosition((GetMonitorWidth(0) - screenWidth) / 2, (GetMonitorHeight(0) - screenHeight) / 2);
+    SetTargetFPS(60);
+
+    RenderTexture2D target = LoadRenderTexture(renderWidth, renderHeight);
+
+    Game game;
+
+    while (WindowShouldClose() == false) {
+        switch (gameMode) {
+            case 0: // Menu mode
+                ShowMenu();
+                int choice;
+                cin >> choice;
+                if (choice == 1) {
+                    gameMode = 1; // Switch to game mode
+                } else if (choice == 2) {
+                    CloseWindow();
+                    return 0; // Exit the game
+                }
+                break;
+            case 1: // Game mode
+                game.Update();
+
+                BeginTextureMode(target);
+                ClearBackground(Dark_Green);
+                game.Draw();
+                EndTextureMode();
+
+                BeginDrawing();
+                ClearBackground(Dark_Green);
+
+                DrawTexturePro(target.texture,
+                    Rectangle{ 0, 0, (float)target.texture.width, (float)-target.texture.height },
+                    Rectangle{ 0, 0, (float)screenWidth, (float)screenHeight },
+                    Vector2{ 0, 0 },
+                    0.0f,
+                    WHITE);
+
+                EndDrawing();
+                break;
+        }
+    }
+
+    UnloadRenderTexture(target);
+    CloseWindow();
+    return 0;
+}

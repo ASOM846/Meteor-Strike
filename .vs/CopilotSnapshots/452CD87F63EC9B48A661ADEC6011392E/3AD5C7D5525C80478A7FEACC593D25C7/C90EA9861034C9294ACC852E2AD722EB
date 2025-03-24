@@ -1,0 +1,46 @@
+﻿#include "asteroid.hpp"
+#include <raylib.h>
+
+Asteroid::Asteroid() : x(0), y(0), width(50), height(50), timeToLive(5.0f), elapsedTime(0.0f) // Initialize position, size, and time to live
+{
+    InitializeAtTop(); // Initialize asteroid at the top of the screen
+}
+
+Asteroid::~Asteroid()
+{
+}
+
+void Asteroid::Update()
+{
+    Move();
+    elapsedTime += GetFrameTime(); // Update elapsed time
+    if (elapsedTime >= timeToLive) // Check if the asteroid should despawn
+    {
+        InitializeAtTop(); // Reset asteroid position and time
+        elapsedTime = 0.0f;
+    }
+}
+
+void Asteroid::Draw()
+{
+    DrawCircle(x, y, width / 2, GRAY); // Draw the asteroid as a circle  
+}
+
+void Asteroid::Move()
+{
+    y += 5; // Przesuń asteroidę w dół o 5 jednostek
+
+    // Jeżeli asteroida wyjdzie poza dolną krawędź ekranu, zresetuj jej pozycję na górze
+    if (y - (height / 2) > 1080) // Upewnij się, że asteroida całkowicie opuści ekran
+    {
+        InitializeAtTop();
+        elapsedTime = 0.0f; // Reset elapsed time when asteroid is reset
+    }
+}
+
+void Asteroid::InitializeAtTop()
+{
+    x = GetRandomValue(0, 1920); // Losowa pozycja x na szerokości ekranu
+    y = -height / 2; // Ustawienie y na górnej krawędzi ekranu, aby asteroida zaczynała poza ekranem
+    elapsedTime = 0.0f; // Reset elapsed time when asteroid is initialized
+}

@@ -1,0 +1,3 @@
+C:\Users\Antoni Janik\Desktop\ship\x64\Debug\raylib.dll
+C:\Users\Antoni Janik\Desktop\ship\x64\Debug\glfw3.dll
+C:\Users\Antoni Janik\Desktop\ship\Raylib S.35c6381a\x64\Debug\Raylib S.F7D1B5DE.Up2Date
