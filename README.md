@@ -2,10 +2,11 @@
 
 Simple c++ and raylib game. 
 
-# Video Tutorial
+# Screenshoots
 
 <p align="center">
-  <img src="preview.jpg" alt="" width="800">
+  <img src="screenshoots/1.jpg" alt="" width="800">
+  <img src="screenshoots/2.jpg" alt="" width="800">
 </p>
 
 <p align="center">
