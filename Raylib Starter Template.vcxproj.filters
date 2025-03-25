@@ -106,5 +106,8 @@
     <Image Include="graphics\hpUp.png">
       <Filter>graphics</Filter>
     </Image>
+    <Image Include="graphics\shield.png">
+      <Filter>graphics</Filter>
+    </Image>
   </ItemGroup>
 </Project>

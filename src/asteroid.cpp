@@ -10,7 +10,7 @@ Texture2D Asteroid::smallTexture1;
 Texture2D Asteroid::smallTexture2;
 Texture2D Asteroid::tinyTexture1;
 Texture2D Asteroid::tinyTexture2;
-Texture2D Asteroid::hpUpTexture; // Dodaj tekstur© hpUp
+Texture2D Asteroid::hpUpTexture; // Dodaj tekstur? hpUp
 
 Asteroid::Asteroid()
     : x(GetRandomValue(0, 1920)),
@@ -79,21 +79,21 @@ void Asteroid::Update()
     }
 }
 
-void Asteroid::Draw(bool useGraphics)
-{
-    if (active) {
-        if (useGraphics) {
-            DrawTexture(texture, x, y, WHITE);
-        }
-        else {
-            if (isHpUp) {
-                DrawRectangle(x, y, width, height, RED); // Rysuj czerwon¥ skrzynk© dla hpUp
-            }
-            else {
-                DrawRectangle(x, y, width, height, GRAY);
-            }
-        }
-    }
+void Asteroid::Draw(bool useGraphics)  
+{  
+   if (active) {  
+       if (useGraphics) {  
+           DrawTexture(texture, x, y, WHITE);  
+       }  
+       else {  
+           if (isHpUp) {  
+               DrawCircle(x + width / 2, y + height / 2, width / 2, RED); // Rysuj czerwon¥ kul© dla hpUp  
+           }  
+           else {  
+               DrawCircle(x + width / 2, y + height / 2, width / 2, GRAY); // Rysuj szar¥ kul© dla zwykˆej asteroidy  
+           }  
+       }  
+   }  
 }
 
 Rectangle Asteroid::GetRect() const
@@ -128,7 +128,7 @@ void Asteroid::LoadTextures()
     smallTexture2 = LoadTexture("graphics/meteorGrey_small2.png");
     tinyTexture1 = LoadTexture("graphics/meteorGrey_tiny1.png");
     tinyTexture2 = LoadTexture("graphics/meteorGrey_tiny2.png");
-    hpUpTexture = LoadTexture("graphics/hpUp.png"); // Zaˆaduj tekstur© hpUp
+    hpUpTexture = LoadTexture("graphics/hpUp.png"); // Za?aduj tekstur? hpUp
 }
 
 void Asteroid::UnloadTextures()
@@ -143,5 +143,5 @@ void Asteroid::UnloadTextures()
     UnloadTexture(smallTexture2);
     UnloadTexture(tinyTexture1);
     UnloadTexture(tinyTexture2);
-    UnloadTexture(hpUpTexture); // Zwolnij tekstur© hpUp
+    UnloadTexture(hpUpTexture); // Zwolnij tekstur? hpUp
 }

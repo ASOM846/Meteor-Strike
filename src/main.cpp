@@ -56,7 +56,6 @@ int main() {
     bool useAsteroidGraphics = true;
     bool useSounds = true;
     bool isFullscreen = false;
-    bool shieldPurchased = false; // Dodaj zmienn¥ do przechowywania stanu zakupu tarczy
 
     // Zaˆaduj tekstur© tˆa
     Texture2D backgroundTexture = LoadTexture("graphics/bcg.jpg");
@@ -244,14 +243,16 @@ int main() {
             DrawText(TextFormat("Shield Level: %i", game.GetShieldLevel()), 250, 10, 30, YELLOW);
             DrawText(TextFormat("Money: %i", game.GetMoney()), 490, 10, 30, YELLOW);
 
-            if (shieldPurchased) {
+            if (game.IsShieldPurchased()) {
                 DrawText("Shield Purchased", 730, 10, 30, YELLOW);
+            }
+            else {
+                DrawText("Cost: 500", purchaseShield.GetX() + purchaseShield.GetWidth() + 10, purchaseShield.GetY() + 10, 20, YELLOW);
             }
 
             // Wy˜wietlanie koszt¢w obok przycisk¢w
             DrawText("Cost: 200", upgradeSpeed.GetX() + upgradeSpeed.GetWidth() + 10, upgradeSpeed.GetY() + 10, 20, YELLOW);
             DrawText("Refund: 100", downgradeSpeed.GetX() + downgradeSpeed.GetWidth() + 10, downgradeSpeed.GetY() + 10, 20, YELLOW);
-            DrawText("Cost: 500", purchaseShield.GetX() + purchaseShield.GetWidth() + 10, purchaseShield.GetY() + 10, 20, YELLOW);
             DrawText("Cost: 300", upgradeShieldTime.GetX() + upgradeShieldTime.GetWidth() + 10, upgradeShieldTime.GetY() + 10, 20, YELLOW);
 
             if (upgradeSpeed.IsClicked()) {
@@ -262,14 +263,7 @@ int main() {
             }
             if (purchaseShield.IsClicked()) {
                 game.PurchaseShield();
-                if (game.GetMoney() < 500) {
-                    shieldPurchased = false; // Ustaw wska«nik zakupu tarczy na false, je˜li nie ma wystarczaj¥cej ilo˜ci pieni©dzy
-                }
-                else {
-                    shieldPurchased = true; // Ustaw wska«nik zakupu tarczy na true, je˜li zakup jest udany
-                }
             }
-
             if (upgradeShieldTime.IsClicked()) {
                 game.UpgradeShieldTime();
             }

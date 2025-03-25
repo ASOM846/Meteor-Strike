@@ -59,6 +59,7 @@
     <Image Include="graphics\meteorGrey_tiny1.png" />
     <Image Include="graphics\meteorGrey_tiny2.png" />
     <Image Include="graphics\playerShip.png" />
+    <Image Include="graphics\shield.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

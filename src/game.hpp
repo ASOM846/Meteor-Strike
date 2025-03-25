@@ -27,6 +27,7 @@ public:
     int GetSpeedLevel() const;
     int GetShieldLevel() const;
     double GetShieldCooldown() const;
+    bool IsShieldPurchased() const;
 
     void SaveStuffToFile();
     void LoadStuffFromFile();
@@ -65,12 +66,16 @@ private:
     void UnloadTextures();
 
     Texture2D shipTexture;
+    Texture2D shieldTexture;
     Texture2D laserTexture;
     Sound laserSound;
     Texture2D backgroundTexture;
     Sound checkEngineSound;
     void PlayCheckEngineSound();
     void StopCheckEngineSound();
+
+    void SavePurchasesToFile();
+    void LoadPurchasesFromFile();
 };
 
 #endif // GAME_HPP

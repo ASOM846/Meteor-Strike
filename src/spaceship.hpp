@@ -8,7 +8,7 @@
 class Spaceship {
 public:
     Spaceship();
-    Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound);
+    Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound, Texture2D shieldTexture);
     ~Spaceship();
 
     void Update();
@@ -26,7 +26,9 @@ public:
     bool IsShieldActive() const;
     void IncreaseShieldTime();
     int GetShieldLevel() const;
-    double GetShieldCooldown() const; // Dodaj metod© do pobierania czasu odnowienia tarczy
+    double GetShieldCooldown() const;
+    void SetShieldLevel(int level);
+
 
 private:
     int x;
@@ -38,16 +40,18 @@ private:
     double lastFireTime = 0.0;
     Texture2D texture;
     Texture2D laserTexture;
+    Texture2D shieldTexture;
     Sound laserSound;
     bool useSounds;
 
     bool shieldActive = false;
     double shieldEndTime = 0.0;
     double shieldDuration = 5.0;
-    double shieldCooldown = 10.0; // Dodaj zmienn¥ do przechowywania czasu odnowienia tarczy
+    double shieldCooldown = 10.0;
 
     void Move();
     void CheckIfOffScreen();
 };
 
 #endif // SPACESHIP_HPP
+

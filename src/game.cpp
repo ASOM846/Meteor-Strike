@@ -9,7 +9,7 @@ Game::Game(int* gameMode) : gameMode(gameMode), asteroidSpawnTimer(0.0f), astero
 {
     InitAudioDevice();
     LoadTextures();
-    spaceship = Spaceship(shipTexture, laserTexture, laserSound);
+    spaceship = Spaceship(shipTexture, laserTexture, laserSound, shieldTexture);
     InitializeAsteroids(5);
     backgroundTexture = LoadTexture("graphics/bcg.jpg");
 }
@@ -52,7 +52,7 @@ void Game::Draw()
     DisplayHighScore();
     DisplayMoney();
 
-    // Wy?wietlanie wska®nika czasu odnowienia tarczy
+    // Wy˜wietlanie wska«nika czasu odnowienia tarczy
     if (shieldPurchased) {
         DrawText(TextFormat("Shield Cooldown: %.1f", GetShieldCooldown()), 10, 50, 30, YELLOW);
     }
@@ -186,6 +186,7 @@ double Game::GetShieldCooldown() const {
 void Game::LoadTextures()
 {
     shipTexture = LoadTexture("graphics/playerShip.png");
+    shieldTexture = LoadTexture("graphics/shield.png");
     laserTexture = LoadTexture("graphics/laser.png");
     laserSound = LoadSound("sounds/laser.ogg");
     checkEngineSound = LoadSound("sounds/checkEngine.mp3");
@@ -205,6 +206,7 @@ void Game::LoadTextures()
 void Game::UnloadTextures()
 {
     UnloadTexture(shipTexture);
+    UnloadTexture(shieldTexture);
     UnloadTexture(laserTexture);
     UnloadSound(laserSound);
     UnloadSound(checkEngineSound);
@@ -264,6 +266,7 @@ void Game::SaveStuffToFile()
     }
 }
 
+
 void Game::LoadStuffFromFile()
 {
     std::ifstream file("save.txt");
@@ -276,7 +279,6 @@ void Game::LoadStuffFromFile()
         file >> shieldPurchased;
         file.close();
 
-        // Ustaw poziomy ulepsze„
         for (int i = 1; i < speedLevel; ++i) {
             spaceship.IncreaseSpeed();
         }
@@ -286,34 +288,61 @@ void Game::LoadStuffFromFile()
     }
 }
 
+void Game::SavePurchasesToFile()
+{
+    std::ofstream file("purchases.txt");
+    if (file.is_open()) {
+        file << shieldPurchased << std::endl;
+        file.close();
+    }
+}
+
+void Game::LoadPurchasesFromFile()
+{
+    std::ifstream file("purchases.txt");
+    if (file.is_open()) {
+        file >> shieldPurchased;
+        file.close();
+    }
+}
+
 void Game::PurchaseShield()
 {
-    if (money >= 500) { // Zwi?ksz koszt zakupu tarczy
+    if (!shieldPurchased && money >= 500) {
         money -= 500;
         shieldPurchased = true;
+        SavePurchasesToFile();
     }
 }
 
 void Game::UpgradeShieldTime()
 {
-    if (money >= 300) { // Zwi?ksz koszt ulepszenia czasu tarczy
+    if (money >= 300 && spaceship.GetShieldLevel() < 5) { // Zwi©ksz koszt ulepszenia czasu tarczy
         money -= 300;
         spaceship.IncreaseShieldTime();
+        SaveStuffToFile();
     }
 }
 
 void Game::UpgradeSpeed()
 {
-    if (money >= 200 && GetSpeedLevel() < 5) { // Zwi?ksz koszt ulepszenia pr?dko?ci
+    if (money >= 200 && GetSpeedLevel() < 5) { // Zwi©ksz koszt ulepszenia pr©dko˜ci
         money -= 200;
         spaceship.IncreaseSpeed();
+        SaveStuffToFile();
     }
 }
 
 void Game::DowngradeSpeed()
 {
     if (spaceship.GetSpeed() > 7) {
-        money += 100; // Zwi?ksz zwrot pieni?dzy za obni–enie pr?dko?ci
+        money += 100; // Zwi©ksz zwrot pieni©dzy za obni¾enie pr©dko˜ci
         spaceship.DecreaseSpeed();
+        SaveStuffToFile();
     }
+}
+
+
+bool Game::IsShieldPurchased() const {
+    return shieldPurchased;
 }

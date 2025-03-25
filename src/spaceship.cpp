@@ -7,8 +7,8 @@ Spaceship::Spaceship()
     y = 1080 - 200;
 }
 
-Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound)
-    : width(50), height(50), texture(shipTexture), laserTexture(laserTexture), laserSound(laserSound), useSounds(true)
+Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound, Texture2D shieldTexture)
+    : width(50), height(50), texture(shipTexture), laserTexture(laserTexture), laserSound(laserSound), shieldTexture(shieldTexture), useSounds(true)
 {
     x = 1920 / 2;
     y = 1080 - 200;
@@ -16,7 +16,7 @@ Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserS
 
 Spaceship::~Spaceship()
 {
-    // Nie zwalniamy tekstur i d«wi©k¢w, poniewa¾ s¥ one zwalniane w klasie Game
+    // Nie zwalniamy tekstur i d®wi?kôw, poniewa– s¤ one zwalniane w klasie Game
 }
 
 void Spaceship::Update()
@@ -30,7 +30,7 @@ void Spaceship::Update()
 
     if (shieldActive && GetTime() > shieldEndTime) {
         shieldActive = false;
-        shieldCooldown = 10.0; // Ustaw czas odnowienia tarczy po jej wyˆ¥czeniu
+        shieldCooldown = 10.0; // Ustaw czas odnowienia tarczy po jej wy?¤czeniu
     }
 
     if (!shieldActive && shieldCooldown > 0) {
@@ -44,17 +44,22 @@ void Spaceship::Draw(bool useGraphics)
         DrawTexture(texture, x - 25, y, WHITE);
     }
     else {
-        DrawRectangle(x - width / 2, y, width, height, BLUE);
+        DrawRectangle(x - width / 2, y, width, height, WHITE);
         DrawTriangle(
             Vector2{ (float)x, (float)(y - height / 2) },
             Vector2{ (float)(x - width / 2), (float)y },
             Vector2{ (float)(x + width / 2), (float)y },
-            BLUE
+            WHITE
         );
     }
 
     if (shieldActive) {
-        DrawCircle(x, y + height / 2, width, Fade(BLUE, 0.3f)); // Rysuj tarcz©
+        if (useGraphics) {
+            DrawTexture(shieldTexture, x - 50, y - 30, WHITE);
+        }
+        else {
+            DrawCircle(x, y + height - 60 / 2, width, Fade(BLUE, 0.3f)); // Rysuj tarcz?
+        }
     }
 
     for (auto& laser : lasers)
@@ -128,8 +133,14 @@ bool Spaceship::IsShieldActive() const {
     return shieldActive;
 }
 
+void Spaceship::SetShieldLevel(int level) {
+    shieldDuration = 5.0 + (level - 1) * 2.0;
+}
+
 void Spaceship::IncreaseShieldTime() {
-    shieldDuration += 2.0;
+    if (GetShieldLevel() < 5) {
+        shieldDuration += 2.0;
+    }
 }
 
 int Spaceship::GetShieldLevel() const {
@@ -139,3 +150,4 @@ int Spaceship::GetShieldLevel() const {
 double Spaceship::GetShieldCooldown() const {
     return shieldCooldown;
 }
+
