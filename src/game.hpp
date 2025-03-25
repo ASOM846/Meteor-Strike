@@ -4,6 +4,7 @@
 #include <raylib.h>
 #include <vector>
 #include <fstream>
+#include <string>
 #include "spaceship.hpp"
 #include "asteroid.hpp"
 #include "laser.hpp"
@@ -15,12 +16,11 @@ public:
 
     void Update();
     void Draw();
-    void SetUseShipGraphics(bool use);
-    void SetUseAsteroidGraphics(bool use);
     void SetUseSounds(bool use);
 
     void DisplayHighScore();
     void DisplayMoney();
+    void DisplayObjective();
 
     int GetHighScore() const;
     int GetMoney() const;
@@ -38,6 +38,16 @@ public:
     void PurchaseShield();
     void UpgradeShieldTime();
 
+    void SetLevel(int level);
+    int GetLevel() const;
+    bool IsLevelCompleted() const;
+
+    void PauseGame();
+    void ResumeGame();
+    bool IsPaused() const;
+
+    void Reset(); // Przenie˜ t© metod© do sekcji public
+
 private:
     Spaceship spaceship;
     std::vector<Asteroid> asteroids;
@@ -52,15 +62,16 @@ private:
     void UpdateAsteroidSpawn();
     void CheckCollisions();
     void GameOver();
-    void Reset();
     void DisplayLives();
     void DisplayScore();
 
     int* gameMode;
-    bool useShipGraphics = true;
-    bool useAsteroidGraphics = true;
     bool useSounds = true;
     bool shieldPurchased = false;
+
+    int currentLevel = 1;
+    float levelTime = 0.0f;
+    float levelDuration = 60.0f; // Czas trwania poziomu w sekundach
 
     void LoadTextures();
     void UnloadTextures();
@@ -69,6 +80,8 @@ private:
     Texture2D shieldTexture;
     Texture2D laserTexture;
     Sound laserSound;
+    Sound shieldUpSound;
+    Sound shieldDownSound;
     Texture2D backgroundTexture;
     Sound checkEngineSound;
     void PlayCheckEngineSound();
@@ -76,6 +89,16 @@ private:
 
     void SavePurchasesToFile();
     void LoadPurchasesFromFile();
+
+    // Cele
+    std::string currentObjective;
+    int objectiveCount;
+    int objectiveProgress;
+
+    void GenerateObjective();
+    bool CheckObjectiveCompleted() const;
+
+    bool paused = false;
 };
 
 #endif // GAME_HPP

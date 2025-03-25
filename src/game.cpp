@@ -4,14 +4,18 @@
 #include "laser.hpp"
 #include <raylib.h>
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
 
 Game::Game(int* gameMode) : gameMode(gameMode), asteroidSpawnTimer(0.0f), asteroidSpawnInterval(GetRandomValue(0.5f, 1.5f))
 {
     InitAudioDevice();
     LoadTextures();
-    spaceship = Spaceship(shipTexture, laserTexture, laserSound, shieldTexture);
+    spaceship = Spaceship(shipTexture, laserTexture, laserSound, shieldTexture, shieldUpSound, shieldDownSound);
     InitializeAsteroids(5);
     backgroundTexture = LoadTexture("graphics/bcg.jpg");
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+    GenerateObjective();
 }
 
 Game::~Game()
@@ -23,9 +27,11 @@ Game::~Game()
 
 void Game::Update()
 {
+    if (paused) return;
+
     spaceship.Update();
     if (IsKeyPressed(KEY_SPACE)) {
-        spaceship.FireLaser(useShipGraphics, useSounds);
+        spaceship.FireLaser();
     }
     if (IsKeyPressed(KEY_S) && shieldPurchased && GetShieldCooldown() <= 0) { // Klawisz do aktywacji tarczy
         spaceship.ActivateShield();
@@ -36,25 +42,39 @@ void Game::Update()
     }
     UpdateAsteroidSpawn();
     CheckCollisions();
+
+    // Aktualizacja czasu poziomu
+    levelTime += GetFrameTime();
+    if (CheckObjectiveCompleted()) {
+        *gameMode = 4; // Przej˜cie do ekranu ukoäczenia poziomu
+    }
 }
 
 void Game::Draw()
 {
     DrawTexture(backgroundTexture, 0, 0, WHITE);
 
-    spaceship.Draw(useShipGraphics);
+    spaceship.Draw();
     for (auto& asteroid : asteroids)
     {
-        asteroid.Draw(useAsteroidGraphics);
+        asteroid.Draw();
     }
     DisplayLives();
     DisplayScore();
     DisplayHighScore();
     DisplayMoney();
+    DisplayObjective();
 
     // Wy˜wietlanie wska«nika czasu odnowienia tarczy
     if (shieldPurchased) {
         DrawText(TextFormat("Shield Cooldown: %.1f", GetShieldCooldown()), 10, 50, 30, YELLOW);
+    }
+
+    // Wy˜wietlanie czasu poziomu
+    DrawText(TextFormat("Time: %.1f", levelTime), 10, 90, 30, YELLOW);
+
+    if (paused) {
+        DrawText("PAUSED", GetScreenWidth() / 2 - MeasureText("PAUSED", 60) / 2, GetScreenHeight() / 2 - 30, 60, YELLOW);
     }
 }
 
@@ -62,7 +82,7 @@ void Game::InitializeAsteroids(int count)
 {
     for (int i = 0; i < count; ++i)
     {
-        asteroids.emplace_back();
+        asteroids.emplace_back(currentLevel); // Przeka¾ poziom do konstruktora Asteroid
     }
 }
 
@@ -72,7 +92,7 @@ void Game::UpdateAsteroidSpawn()
 
     if (asteroidSpawnTimer >= asteroidSpawnInterval)
     {
-        asteroids.emplace_back();
+        asteroids.emplace_back(currentLevel); // Przeka¾ poziom do konstruktora Asteroid
         asteroidSpawnTimer = 0.0f;
         asteroidSpawnInterval = GetRandomValue(0.5f, 1.5f);
     }
@@ -90,12 +110,28 @@ void Game::CheckCollisions()
             {
                 if (asteroid.IsHpUp()) {
                     lives++;
+                    if (currentObjective == "Collect 15 health packs") {
+                        objectiveProgress++;
+                    }
                 }
                 else {
                     score++;
                     money += 10;
+                    if (currentObjective == "Destroy 20 brown asteroids" &&
+                        (asteroid.texture.id == Asteroid::brownBigTexture1.id ||
+                            asteroid.texture.id == Asteroid::brownBigTexture2.id ||
+                            asteroid.texture.id == Asteroid::brownBigTexture3.id ||
+                            asteroid.texture.id == Asteroid::brownBigTexture4.id ||
+                            asteroid.texture.id == Asteroid::brownMedTexture1.id ||
+                            asteroid.texture.id == Asteroid::brownMedTexture2.id ||
+                            asteroid.texture.id == Asteroid::brownSmallTexture1.id ||
+                            asteroid.texture.id == Asteroid::brownSmallTexture2.id ||
+                            asteroid.texture.id == Asteroid::brownTinyTexture1.id ||
+                            asteroid.texture.id == Asteroid::brownTinyTexture2.id)) {
+                        objectiveProgress++;
+                    }
                 }
-                asteroid.Deactivate();
+                asteroid.Hit(); // Zamiast deaktywowa† asteroid©, obsˆu¾ trafienie
                 laser.active = false;
                 break;
             }
@@ -110,6 +146,9 @@ void Game::CheckCollisions()
 
             if (asteroid.IsHpUp()) {
                 lives++;
+                if (currentObjective == "Collect 15 health packs") {
+                    objectiveProgress++;
+                }
             }
             else {
                 lives--;
@@ -124,6 +163,7 @@ void Game::CheckCollisions()
         }
     }
 }
+
 
 void Game::GameOver()
 {
@@ -140,8 +180,26 @@ void Game::Reset()
 {
     lives = 3;
     score = 0;
+	paused = false;
     asteroids.clear();
     InitializeAsteroids(5);
+    levelTime = 0.0f;
+    GenerateObjective();
+}
+
+void Game::PauseGame()
+{
+    paused = true;
+}
+
+void Game::ResumeGame()
+{
+    paused = false;
+}
+
+bool Game::IsPaused() const
+{
+    return paused;
 }
 
 void Game::DisplayLives()
@@ -161,6 +219,10 @@ void Game::DisplayHighScore()
 
 void Game::DisplayMoney() {
     DrawText(TextFormat("Money: %i", money), 700, 10, 30, WHITE);
+}
+
+void Game::DisplayObjective() {
+    DrawText(TextFormat("Objective: %s (%i/%i)", currentObjective.c_str(), objectiveProgress, objectiveCount), 10, 130, 30, YELLOW);
 }
 
 int Game::GetHighScore() const {
@@ -189,6 +251,8 @@ void Game::LoadTextures()
     shieldTexture = LoadTexture("graphics/shield.png");
     laserTexture = LoadTexture("graphics/laser.png");
     laserSound = LoadSound("sounds/laser.ogg");
+    shieldUpSound = LoadSound("sounds/shieldUp.ogg");
+    shieldDownSound = LoadSound("sounds/shieldDown.ogg");
     checkEngineSound = LoadSound("sounds/checkEngine.mp3");
     Asteroid::bigTexture1 = LoadTexture("graphics/meteorGrey_big1.png");
     Asteroid::bigTexture2 = LoadTexture("graphics/meteorGrey_big2.png");
@@ -201,6 +265,16 @@ void Game::LoadTextures()
     Asteroid::tinyTexture1 = LoadTexture("graphics/meteorGrey_tiny1.png");
     Asteroid::tinyTexture2 = LoadTexture("graphics/meteorGrey_tiny2.png");
     Asteroid::hpUpTexture = LoadTexture("graphics/hpUp.png");
+    Asteroid::brownBigTexture1 = LoadTexture("graphics/meteorBrown_big1.png");
+    Asteroid::brownBigTexture2 = LoadTexture("graphics/meteorBrown_big2.png");
+    Asteroid::brownBigTexture3 = LoadTexture("graphics/meteorBrown_big3.png");
+    Asteroid::brownBigTexture4 = LoadTexture("graphics/meteorBrown_big4.png");
+    Asteroid::brownMedTexture1 = LoadTexture("graphics/meteorBrown_med1.png");
+    Asteroid::brownMedTexture2 = LoadTexture("graphics/meteorBrown_med2.png");
+    Asteroid::brownSmallTexture1 = LoadTexture("graphics/meteorBrown_small1.png");
+    Asteroid::brownSmallTexture2 = LoadTexture("graphics/meteorBrown_small2.png");
+    Asteroid::brownTinyTexture1 = LoadTexture("graphics/meteorBrown_tiny1.png");
+    Asteroid::brownTinyTexture2 = LoadTexture("graphics/meteorBrown_tiny2.png");
 }
 
 void Game::UnloadTextures()
@@ -209,6 +283,8 @@ void Game::UnloadTextures()
     UnloadTexture(shieldTexture);
     UnloadTexture(laserTexture);
     UnloadSound(laserSound);
+    UnloadSound(shieldUpSound);
+    UnloadSound(shieldDownSound);
     UnloadSound(checkEngineSound);
     UnloadTexture(Asteroid::bigTexture1);
     UnloadTexture(Asteroid::bigTexture2);
@@ -221,16 +297,16 @@ void Game::UnloadTextures()
     UnloadTexture(Asteroid::tinyTexture1);
     UnloadTexture(Asteroid::tinyTexture2);
     UnloadTexture(Asteroid::hpUpTexture);
-}
-
-void Game::SetUseShipGraphics(bool use)
-{
-    useShipGraphics = use;
-}
-
-void Game::SetUseAsteroidGraphics(bool use)
-{
-    useAsteroidGraphics = use;
+    UnloadTexture(Asteroid::brownBigTexture1);
+    UnloadTexture(Asteroid::brownBigTexture2);
+    UnloadTexture(Asteroid::brownBigTexture3);
+    UnloadTexture(Asteroid::brownBigTexture4);
+    UnloadTexture(Asteroid::brownMedTexture1);
+    UnloadTexture(Asteroid::brownMedTexture2);
+    UnloadTexture(Asteroid::brownSmallTexture1);
+    UnloadTexture(Asteroid::brownSmallTexture2);
+    UnloadTexture(Asteroid::brownTinyTexture1);
+    UnloadTexture(Asteroid::brownTinyTexture2);
 }
 
 void Game::SetUseSounds(bool useSounds) {
@@ -262,10 +338,10 @@ void Game::SaveStuffToFile()
         file << GetSpeedLevel() << std::endl;
         file << GetShieldLevel() << std::endl;
         file << shieldPurchased << std::endl;
+        file << currentLevel << std::endl;
         file.close();
     }
 }
-
 
 void Game::LoadStuffFromFile()
 {
@@ -277,6 +353,7 @@ void Game::LoadStuffFromFile()
         file >> speedLevel;
         file >> shieldLevel;
         file >> shieldPurchased;
+        file >> currentLevel;
         file.close();
 
         for (int i = 1; i < speedLevel; ++i) {
@@ -342,7 +419,36 @@ void Game::DowngradeSpeed()
     }
 }
 
-
 bool Game::IsShieldPurchased() const {
     return shieldPurchased;
+}
+
+void Game::SetLevel(int level) {
+    currentLevel = level;
+    levelDuration = 60.0f * level; // Przykˆadowo, czas trwania poziomu ro˜nie z ka¾dym poziomem
+}
+
+int Game::GetLevel() const {
+    return currentLevel;
+}
+
+bool Game::IsLevelCompleted() const {
+    return CheckObjectiveCompleted();
+}
+
+void Game::GenerateObjective() {
+    int objectiveType = GetRandomValue(0, 1);
+    if (objectiveType == 0) {
+        currentObjective = "Collect 15 health packs";
+        objectiveCount = 15;
+    }
+    else {
+        currentObjective = "Destroy 20 brown asteroids";
+        objectiveCount = 20;
+    }
+    objectiveProgress = 0;
+}
+
+bool Game::CheckObjectiveCompleted() const {
+    return objectiveProgress >= objectiveCount;
 }

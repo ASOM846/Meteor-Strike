@@ -23,15 +23,10 @@ void Laser::Update()
     }
 }
 
-void Laser::Draw(bool useGraphics)
+void Laser::Draw()
 {
     if (active) {
-        if (useGraphics) {
-            DrawTexture(texture, x - texture.width / 2, y - texture.height / 2, WHITE); // Rysowanie lasera z tekstur¥
-        }
-        else {
-            DrawRectangle(x - 2, y - 10, 4, 20, RED); // Rysowanie lasera jako prostok¥t
-        }
+        DrawTexture(texture, x - texture.width / 2, y - texture.height / 2, WHITE); // Rysowanie lasera z tekstur¥
     }
 }
 
@@ -39,4 +34,3 @@ Rectangle Laser::GetRect() const
 {
     return Rectangle{ x - 2, y - 10, 4, 20 }; // Zwr¢† prostok¥t reprezentuj¥cy hitboks lasera
 }
-

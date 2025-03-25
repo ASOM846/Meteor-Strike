@@ -1,42 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\",
+  "WorkspaceRootPath": "C:\\Users\\Antoni Janik\\Desktop\\ship\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\asteroid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\laser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\spaceship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\spaceship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\spaceship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\spaceship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\asteroid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\asteroid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\asteroid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\asteroid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\laser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35C6381A-336C-4883-AAC1-A77726EEC5B9}|Raylib Starter Template.vcxproj|solutionrelative:src\\laser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,112 +54,120 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\main.cpp",
+              "RelativeDocumentMoniker": "src\\main.cpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\main.cpp",
+              "RelativeToolTip": "src\\main.cpp",
+              "ViewState": "AgIAAEcBAAAAAAAAAAAiwHEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-23T15:24:31.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "spaceship.hpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.hpp",
-              "RelativeDocumentMoniker": "src\\spaceship.hpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.hpp",
-              "RelativeToolTip": "src\\spaceship.hpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Title": "asteroid.hpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\asteroid.hpp",
+              "RelativeDocumentMoniker": "src\\asteroid.hpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\asteroid.hpp",
+              "RelativeToolTip": "src\\asteroid.hpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T15:28:31.15Z"
+              "WhenOpened": "2025-03-23T15:28:34.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "spaceship.cpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.cpp",
-              "RelativeDocumentMoniker": "src\\spaceship.cpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\spaceship.cpp",
-              "RelativeToolTip": "src\\spaceship.cpp",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAewIoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T15:28:28.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "asteroid.hpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.hpp",
-              "RelativeDocumentMoniker": "src\\asteroid.hpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.hpp",
-              "RelativeToolTip": "src\\asteroid.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T15:28:34.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "asteroid.cpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.cpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\asteroid.cpp",
               "RelativeDocumentMoniker": "src\\asteroid.cpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\asteroid.cpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\asteroid.cpp",
               "RelativeToolTip": "src\\asteroid.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAACIAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAMEAAAAAAAAAAADwv+YAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-23T15:28:36.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "game.hpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.hpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\game.hpp",
               "RelativeDocumentMoniker": "src\\game.hpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.hpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\game.hpp",
               "RelativeToolTip": "src\\game.hpp",
-              "ViewState": "AgIAACoAAAAAAAAAAAAuwFEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAiwGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T15:32:40.85Z"
+              "WhenOpened": "2025-03-23T15:32:40.85Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "game.cpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.cpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\game.cpp",
               "RelativeDocumentMoniker": "src\\game.cpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\game.cpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\game.cpp",
               "RelativeToolTip": "src\\game.cpp",
-              "ViewState": "AgIAADoBAAAAAAAAAADwv1cBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIAAAAAAAAAAAADwv40AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T15:32:39.387Z"
+              "WhenOpened": "2025-03-23T15:32:39.387Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "laser.hpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\laser.hpp",
+              "RelativeDocumentMoniker": "src\\laser.hpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\laser.hpp",
+              "RelativeToolTip": "src\\laser.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-23T16:22:44.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "laser.cpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.cpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\laser.cpp",
               "RelativeDocumentMoniker": "src\\laser.cpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.cpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\laser.cpp",
               "RelativeToolTip": "src\\laser.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T16:22:42.852Z"
+              "WhenOpened": "2025-03-23T16:22:42.852Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "laser.hpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.hpp",
-              "RelativeDocumentMoniker": "src\\laser.hpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\laser.hpp",
-              "RelativeToolTip": "src\\laser.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAASAAAAAAAAAA==",
+              "Title": "spaceship.hpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\spaceship.hpp",
+              "RelativeDocumentMoniker": "src\\spaceship.hpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\spaceship.hpp",
+              "RelativeToolTip": "src\\spaceship.hpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwCEAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T16:22:44.362Z"
+              "WhenOpened": "2025-03-23T15:28:31.15Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\main.cpp",
-              "RelativeDocumentMoniker": "src\\main.cpp",
-              "ToolTip": "C:\\Users\\Antoni Janik\\Documents\\GitHub\\Meteor-Strike\\src\\main.cpp",
-              "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAADYAAAAAAAAAAAAuwEoAAAB7AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "spaceship.cpp",
+              "DocumentMoniker": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\spaceship.cpp",
+              "RelativeDocumentMoniker": "src\\spaceship.cpp",
+              "ToolTip": "C:\\Users\\Antoni Janik\\Desktop\\ship\\src\\spaceship.cpp",
+              "RelativeToolTip": "src\\spaceship.cpp",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAiwIkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T15:24:31.289Z"
+              "WhenOpened": "2025-03-23T15:28:28.561Z",
+              "EditorCaption": ""
             }
           ]
         }

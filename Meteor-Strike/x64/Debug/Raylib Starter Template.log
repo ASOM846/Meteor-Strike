@@ -1,10 +1,10 @@
 ﻿  game.cpp
-C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(8,118): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(8,112): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(8,96): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
-C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(77,54): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(77,48): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(77,47): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
-  Raylib Starter Template.vcxproj -> C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\x64\Debug\Meteor-Strike.exe
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(10,118): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(10,112): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(10,96): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(97,54): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(97,48): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(97,47): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+  Raylib Starter Template.vcxproj -> C:\Users\Antoni Janik\Desktop\ship\x64\Debug\Meteor-Strike.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

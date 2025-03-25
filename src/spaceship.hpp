@@ -8,12 +8,12 @@
 class Spaceship {
 public:
     Spaceship();
-    Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound, Texture2D shieldTexture);
+    Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound, Texture2D shieldTexture, Sound shieldUpSound, Sound shieldDownSound);
     ~Spaceship();
 
     void Update();
-    void Draw(bool useGraphics);
-    void FireLaser(bool useGraphics, bool useSounds);
+    void Draw();
+    void FireLaser();
     std::vector<Laser>& GetLasers();
     Rectangle GetRect() const;
     void SetUseSounds(bool useSounds);
@@ -29,7 +29,6 @@ public:
     double GetShieldCooldown() const;
     void SetShieldLevel(int level);
 
-
 private:
     int x;
     int y;
@@ -42,6 +41,8 @@ private:
     Texture2D laserTexture;
     Texture2D shieldTexture;
     Sound laserSound;
+    Sound shieldUpSound;
+    Sound shieldDownSound;
     bool useSounds;
 
     bool shieldActive = false;
@@ -54,4 +55,3 @@ private:
 };
 
 #endif // SPACESHIP_HPP
-

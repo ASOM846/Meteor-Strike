@@ -48,6 +48,16 @@
     <Image Include="graphics\bcg.jpg" />
     <Image Include="graphics\hpUp.png" />
     <Image Include="graphics\laser.png" />
+    <Image Include="graphics\meteorBrown_big1.png" />
+    <Image Include="graphics\meteorBrown_big2.png" />
+    <Image Include="graphics\meteorBrown_big3.png" />
+    <Image Include="graphics\meteorBrown_big4.png" />
+    <Image Include="graphics\meteorBrown_med1.png" />
+    <Image Include="graphics\meteorBrown_med3.png" />
+    <Image Include="graphics\meteorBrown_small1.png" />
+    <Image Include="graphics\meteorBrown_small2.png" />
+    <Image Include="graphics\meteorBrown_tiny1.png" />
+    <Image Include="graphics\meteorBrown_tiny2.png" />
     <Image Include="graphics\meteorGrey_big1.png" />
     <Image Include="graphics\meteorGrey_big2.png" />
     <Image Include="graphics\meteorGrey_big3.png" />

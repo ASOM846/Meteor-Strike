@@ -1,3 +1,6 @@
 C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\x64\Debug\raylib.dll
 C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\x64\Debug\glfw3.dll
 C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\Meteor-Strike\x64\Debug\Raylib S.F7D1B5DE.Up2Date
+C:\Users\Antoni Janik\Desktop\ship\x64\Debug\raylib.dll
+C:\Users\Antoni Janik\Desktop\ship\x64\Debug\glfw3.dll
+C:\Users\Antoni Janik\Desktop\ship\Meteor-Strike\x64\Debug\Raylib S.F7D1B5DE.Up2Date

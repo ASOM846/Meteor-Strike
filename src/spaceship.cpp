@@ -7,8 +7,8 @@ Spaceship::Spaceship()
     y = 1080 - 200;
 }
 
-Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound, Texture2D shieldTexture)
-    : width(50), height(50), texture(shipTexture), laserTexture(laserTexture), laserSound(laserSound), shieldTexture(shieldTexture), useSounds(true)
+Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserSound, Texture2D shieldTexture, Sound shieldUpSound, Sound shieldDownSound)
+    : width(50), height(50), texture(shipTexture), laserTexture(laserTexture), laserSound(laserSound), shieldTexture(shieldTexture), shieldUpSound(shieldUpSound), shieldDownSound(shieldDownSound), useSounds(true)
 {
     x = 1920 / 2;
     y = 1080 - 200;
@@ -16,7 +16,7 @@ Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserS
 
 Spaceship::~Spaceship()
 {
-    // Nie zwalniamy tekstur i d®wi?kôw, poniewa– s¤ one zwalniane w klasie Game
+    // Nie zwalniamy tekstur i d«wi©k¢w, poniewa¾ s¥ one zwalniane w klasie Game
 }
 
 void Spaceship::Update()
@@ -30,7 +30,10 @@ void Spaceship::Update()
 
     if (shieldActive && GetTime() > shieldEndTime) {
         shieldActive = false;
-        shieldCooldown = 10.0; // Ustaw czas odnowienia tarczy po jej wy?¤czeniu
+        shieldCooldown = 10.0; // Ustaw czas odnowienia tarczy po jej wyˆ¥czeniu
+        if (useSounds) {
+            PlaySound(shieldDownSound);
+        }
     }
 
     if (!shieldActive && shieldCooldown > 0) {
@@ -38,47 +41,26 @@ void Spaceship::Update()
     }
 }
 
-void Spaceship::Draw(bool useGraphics)
+void Spaceship::Draw()
 {
-    if (useGraphics) {
-        DrawTexture(texture, x - 25, y, WHITE);
-    }
-    else {
-        DrawRectangle(x - width / 2, y, width, height, WHITE);
-        DrawTriangle(
-            Vector2{ (float)x, (float)(y - height / 2) },
-            Vector2{ (float)(x - width / 2), (float)y },
-            Vector2{ (float)(x + width / 2), (float)y },
-            WHITE
-        );
-    }
+    DrawTexture(texture, x - 25, y, WHITE);
 
     if (shieldActive) {
-        if (useGraphics) {
-            DrawTexture(shieldTexture, x - 50, y - 30, WHITE);
-        }
-        else {
-            DrawCircle(x, y + height - 60 / 2, width, Fade(BLUE, 0.3f)); // Rysuj tarcz?
-        }
+        DrawTexture(shieldTexture, x - 50, y - 30, WHITE);
     }
 
     for (auto& laser : lasers)
     {
-        laser.Draw(useGraphics);
+        laser.Draw();
     }
 }
 
-void Spaceship::FireLaser(bool useGraphics, bool useSounds)
+void Spaceship::FireLaser()
 {
     double currentTime = GetTime();
     if (currentTime - lastFireTime >= 0.5)
     {
-        if (useGraphics) {
-            lasers.emplace_back(x + width / 2, y, laserTexture);
-        }
-        else {
-            lasers.emplace_back(x + width / 2 - 25, y);
-        }
+        lasers.emplace_back(x + width / 2, y, laserTexture);
         if (this->useSounds) {
             PlaySound(laserSound);
         }
@@ -127,6 +109,9 @@ int Spaceship::GetSpeed() const {
 void Spaceship::ActivateShield() {
     shieldActive = true;
     shieldEndTime = GetTime() + shieldDuration;
+    if (useSounds) {
+        PlaySound(shieldUpSound);
+    }
 }
 
 bool Spaceship::IsShieldActive() const {
@@ -150,4 +135,3 @@ int Spaceship::GetShieldLevel() const {
 double Spaceship::GetShieldCooldown() const {
     return shieldCooldown;
 }
-

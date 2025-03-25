@@ -109,5 +109,35 @@
     <Image Include="graphics\shield.png">
       <Filter>graphics</Filter>
     </Image>
+    <Image Include="graphics\meteorBrown_big1.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_big2.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_big3.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_big4.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_med1.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_med3.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_small1.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_small2.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_tiny1.png">
+      <Filter>graphics</Filter>
+    </Image>
+    <Image Include="graphics\meteorBrown_tiny2.png">
+      <Filter>graphics</Filter>
+    </Image>
   </ItemGroup>
 </Project>

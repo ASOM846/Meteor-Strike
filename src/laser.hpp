@@ -6,21 +6,20 @@
 class Laser {
 public:
     Laser(float startX, float startY);
-    Laser(float startX, float startY, Texture2D texture); // Dodaj nowy konstruktor
+    Laser(float startX, float startY, Texture2D texture);
     ~Laser();
 
     void Update();
-    void Draw(bool useGraphics); // Dodaj parametr useGraphics
+    void Draw();
     Rectangle GetRect() const;
 
-    bool active; // Flaga aktywno˜ci lasera
+    bool active;
 
 private:
     float x;
     float y;
     float speed;
-    Texture2D texture; // Dodaj zmienn¥ do przechowywania tekstury
+    Texture2D texture;
 };
 
 #endif // LASER_HPP
-
