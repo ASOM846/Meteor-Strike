@@ -16,6 +16,8 @@ Game::Game(int* gameMode) : gameMode(gameMode), asteroidSpawnTimer(0.0f), astero
     backgroundTexture = LoadTexture("graphics/bcg.jpg");
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     GenerateObjective();
+    LoadStuffFromFile(); // Load game state including current level
+    spaceship.SetShieldPurchased(shieldPurchased); // Ustawiamy flag©
 }
 
 Game::~Game()
@@ -47,6 +49,9 @@ void Game::Update()
     levelTime += GetFrameTime();
     if (CheckObjectiveCompleted()) {
         *gameMode = 4; // Przej˜cie do ekranu ukoäczenia poziomu
+        if (currentLevel == levelsCompleted) {
+            levelsCompleted++;
+        }
     }
 }
 
@@ -61,20 +66,26 @@ void Game::Draw()
     }
     DisplayLives();
     DisplayScore();
-    DisplayHighScore();
-    DisplayMoney();
     DisplayObjective();
 
-    // Wy˜wietlanie wska«nika czasu odnowienia tarczy
-    if (shieldPurchased) {
-        DrawText(TextFormat("Shield Cooldown: %.1f", GetShieldCooldown()), 10, 50, 30, YELLOW);
-    }
-
-    // Wy˜wietlanie czasu poziomu
+    // Display the level time
     DrawText(TextFormat("Time: %.1f", levelTime), 10, 90, 30, YELLOW);
 
     if (paused) {
-        DrawText("PAUSED", GetScreenWidth() / 2 - MeasureText("PAUSED", 60) / 2, GetScreenHeight() / 2 - 30, 60, YELLOW);
+        int screenWidth = GetScreenWidth();
+        int screenHeight = GetScreenHeight();
+
+        const char* pausedText = "PAUSED";
+        const char* titleText = "SPACE SHOOTER";
+
+        int pausedTextWidth = MeasureText(pausedText, 60);
+        int titleTextWidth = MeasureText(titleText, 60);
+
+        DrawText(pausedText, screenWidth / 2 - pausedTextWidth / 2, screenHeight / 2 - 30, 60, YELLOW);
+        DrawText(titleText, screenWidth / 2 - titleTextWidth / 2, screenHeight / 4, 60, YELLOW);
+
+        DisplayHighScore();
+        DisplayMoney();
     }
 }
 
@@ -82,7 +93,7 @@ void Game::InitializeAsteroids(int count)
 {
     for (int i = 0; i < count; ++i)
     {
-        asteroids.emplace_back(currentLevel); // Przeka¾ poziom do konstruktora Asteroid
+        asteroids.emplace_back(currentLevel); // Przekazujemy poziom do konstruktora Asteroid
     }
 }
 
@@ -92,7 +103,7 @@ void Game::UpdateAsteroidSpawn()
 
     if (asteroidSpawnTimer >= asteroidSpawnInterval)
     {
-        asteroids.emplace_back(currentLevel); // Przeka¾ poziom do konstruktora Asteroid
+        asteroids.emplace_back(currentLevel); // Przekazujemy poziom do konstruktora Asteroid
         asteroidSpawnTimer = 0.0f;
         asteroidSpawnInterval = GetRandomValue(0.5f, 1.5f);
     }
@@ -131,7 +142,7 @@ void Game::CheckCollisions()
                         objectiveProgress++;
                     }
                 }
-                asteroid.Hit(); // Zamiast deaktywowa† asteroid©, obsˆu¾ trafienie
+                asteroid.Hit(); // Zamiast deaktywowa† asteroid©, obsˆugujemy trafienie
                 laser.active = false;
                 break;
             }
@@ -164,7 +175,6 @@ void Game::CheckCollisions()
     }
 }
 
-
 void Game::GameOver()
 {
     StopCheckEngineSound();
@@ -180,7 +190,7 @@ void Game::Reset()
 {
     lives = 3;
     score = 0;
-	paused = false;
+    paused = false;
     asteroids.clear();
     InitializeAsteroids(5);
     levelTime = 0.0f;
@@ -338,7 +348,8 @@ void Game::SaveStuffToFile()
         file << GetSpeedLevel() << std::endl;
         file << GetShieldLevel() << std::endl;
         file << shieldPurchased << std::endl;
-        file << currentLevel << std::endl;
+        file << currentLevel << std::endl; // Zapisz aktualny poziom
+        file << levelsCompleted << std::endl; // Zapisz levelsCompleted
         file.close();
     }
 }
@@ -388,6 +399,7 @@ void Game::PurchaseShield()
     if (!shieldPurchased && money >= 500) {
         money -= 500;
         shieldPurchased = true;
+        spaceship.SetShieldPurchased(shieldPurchased); // Ustawiamy flag© w Spaceship
         SavePurchasesToFile();
     }
 }
@@ -426,6 +438,8 @@ bool Game::IsShieldPurchased() const {
 void Game::SetLevel(int level) {
     currentLevel = level;
     levelDuration = 60.0f * level; // Przykˆadowo, czas trwania poziomu ro˜nie z ka¾dym poziomem
+    levelTime = 0.0f; // Resetujemy czas poziomu
+    Reset(); // Resetujemy stan gry
 }
 
 int Game::GetLevel() const {
@@ -440,12 +454,12 @@ void Game::GenerateObjective() {
     int objectiveType = GetRandomValue(0, 1);
     if (objectiveType == 0) {
         currentObjective = "Collect 15 health packs";
-        objectiveCount = 15;
+        objectiveCount = 2;
     }
-    else {
-        currentObjective = "Destroy 20 brown asteroids";
-        objectiveCount = 20;
-    }
+    else if (objectiveType == 1 && currentLevel >= 2) {
+           currentObjective = "Destroy 20 brown asteroids";
+           objectiveCount = 2;
+       }
     objectiveProgress = 0;
 }
 

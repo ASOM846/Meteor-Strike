@@ -39,7 +39,10 @@
     <ClCompile Include="src\spaceship.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="raylibLogo.cpp">
+    <ClCompile Include="boss.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\raylibLogo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -60,6 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\asteroid.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="boss.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Meteor-Strike\boss.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -16,7 +16,7 @@ Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Sound laserS
 
 Spaceship::~Spaceship()
 {
-    // Nie zwalniamy tekstur i d«wi©k¢w, poniewa¾ s¥ one zwalniane w klasie Game
+    // Nie zwalniamy tekstur i d?wi?k“w, poniewa? sÏ one zwalniane w klasie Game
 }
 
 void Spaceship::Update()
@@ -30,7 +30,7 @@ void Spaceship::Update()
 
     if (shieldActive && GetTime() > shieldEndTime) {
         shieldActive = false;
-        shieldCooldown = 10.0; // Ustaw czas odnowienia tarczy po jej wyˆ¥czeniu
+        shieldCooldown = 10.0;
         if (useSounds) {
             PlaySound(shieldDownSound);
         }
@@ -52,6 +52,11 @@ void Spaceship::Draw()
     for (auto& laser : lasers)
     {
         laser.Draw();
+    }
+
+    // Draw the shield cooldown bar
+    if (!shieldActive && shieldCooldown > 0) {
+        DrawShieldCooldownBar();
     }
 }
 
@@ -132,6 +137,24 @@ int Spaceship::GetShieldLevel() const {
     return static_cast<int>((shieldDuration - 5.0) / 2.0) + 1;
 }
 
+void Spaceship::SetShieldPurchased(bool purchased) {
+    shieldPurchased = purchased;
+}
+
+
 double Spaceship::GetShieldCooldown() const {
     return shieldCooldown;
+}
+
+void Spaceship::DrawShieldCooldownBar()
+{
+    float barWidth = 100.0f;
+    float barHeight = 10.0f;
+    float barX = x - (barWidth / 2) + 25;
+    float barY = y + height + 30;
+
+    float cooldownPercentage = (10.0 - shieldCooldown) / 10.0 * barWidth;
+
+    DrawRectangle(barX, barY, barWidth, barHeight, GRAY);
+    DrawRectangle(barX, barY, cooldownPercentage, barHeight, BLUE);
 }

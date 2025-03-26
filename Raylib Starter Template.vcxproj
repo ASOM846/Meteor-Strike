@@ -27,16 +27,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="raylibLogo.cpp" />
+    <ClCompile Include="boss.cpp" />
     <ClCompile Include="src\asteroid.cpp" />
     <ClCompile Include="src\button.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\laser.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\menu.cpp" />
+    <ClCompile Include="src\raylibLogo.cpp" />
     <ClCompile Include="src\spaceship.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="boss.hpp" />
+    <ClInclude Include="Meteor-Strike\boss.hpp" />
     <ClInclude Include="src\asteroid.hpp" />
     <ClInclude Include="src\button.hpp" />
     <ClInclude Include="src\game.hpp" />

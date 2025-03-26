@@ -28,6 +28,7 @@ public:
     int GetShieldLevel() const;
     double GetShieldCooldown() const;
     void SetShieldLevel(int level);
+    void SetShieldPurchased(bool purchased); // Dodajemy t© metod©
 
 private:
     int x;
@@ -49,9 +50,11 @@ private:
     double shieldEndTime = 0.0;
     double shieldDuration = 5.0;
     double shieldCooldown = 10.0;
+    bool shieldPurchased = false; // Dodajemy t© zmienn¥
 
     void Move();
     void CheckIfOffScreen();
+    void DrawShieldCooldownBar();
 };
 
 #endif // SPACESHIP_HPP

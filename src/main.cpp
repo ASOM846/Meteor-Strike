@@ -64,14 +64,14 @@ int main() {
     bool useSounds = true;
     bool isFullscreen = false;
 
-    // Zaˆaduj tekstur© tˆa
+    // Za?aduj tekstur? t?a
     Texture2D backgroundTexture = LoadTexture("graphics/bcg.jpg");
 
-    // Wywoˆaj animacj© logo raylib
+    // Wywo?aj animacj? logo raylib
     //PlayRaylibLogoAnimation();
 
     while (WindowShouldClose() == false) {
-        // Aktualizuj pozycje przycisk¢w na podstawie aktualnej szeroko˜ci i wysoko˜ci okna
+        // Aktualizuj pozycje przycisk“w na podstawie aktualnej szeroko?ci i wysoko?ci okna
         startButton.SetPosition(screenWidth / 2 - startButton.GetWidth() / 2, screenHeight / 2 - 100);
         levelsButton.SetPosition(screenWidth / 2 - levelsButton.GetWidth() / 2, screenHeight / 2 - 10);
         upgradesButton.SetPosition(screenWidth / 2 - upgradesButton.GetWidth() / 2, screenHeight / 2 + 50);
@@ -115,10 +115,10 @@ int main() {
             BeginDrawing();
             ClearBackground(Dark_Green);
 
-            // Rysowanie tˆa
+            // Rysowanie t?a
             DrawTexture(backgroundTexture, 0, 0, WHITE);
 
-            // Rysowanie tytuˆu
+            // Rysowanie tytu?u
             DrawText("SPACE SHOOTER", screenWidth / 2 - MeasureText("SPACE SHOOTER", 60) / 2, screenHeight / 4, 60, YELLOW);
 
             startButton.Update();
@@ -160,10 +160,10 @@ int main() {
             BeginDrawing();
             ClearBackground(Dark_Green);
 
-            // Rysowanie tˆa
+            // Rysowanie t?a
             DrawTexture(backgroundTexture, 0, 0, WHITE);
 
-            // Rysowanie tytuˆu
+            // Rysowanie tytu?u
             DrawText("SETTINGS", screenWidth / 2 - MeasureText("SETTINGS", 60) / 2, screenHeight / 4, 60, YELLOW);
 
             mainMenu.Update();
@@ -221,7 +221,7 @@ int main() {
             BeginDrawing();
             ClearBackground(Dark_Green);
 
-            // Rysowanie tˆa
+            // Draw background
             DrawTexture(backgroundTexture, 0, 0, WHITE);
 
             DrawTexturePro(target.texture,
@@ -247,10 +247,10 @@ int main() {
             BeginDrawing();
             ClearBackground(Dark_Green);
 
-            // Rysowanie tˆa
+            // Rysowanie t?a
             DrawTexture(backgroundTexture, 0, 0, WHITE);
 
-            // Rysowanie tytuˆu
+            // Rysowanie tytu?u
             DrawText("UPGRADES", screenWidth / 2 - MeasureText("UPGRADES", 60) / 2, screenHeight / 4, 60, YELLOW);
             DrawText(TextFormat("Money: %i", game.GetMoney()), screenWidth / 2 - MeasureText(TextFormat("Money: %i", game.GetMoney()), 30) / 2, screenHeight / 2 + 170, 30, YELLOW);
 
@@ -266,7 +266,7 @@ int main() {
             upgradeShieldTime.Draw();
             backToMenu.Draw();
 
-            // Wy˜wietlanie informacji o poziomach i pieni¥dzach w jednej linii
+            // Wy?wietlanie informacji o poziomach i pieniÏdzach w jednej linii
             DrawText(TextFormat("Speed Level: %i", game.GetSpeedLevel()), 10, 10, 30, YELLOW);
             DrawText(TextFormat("Shield Level: %i", game.GetShieldLevel()), 250, 10, 30, YELLOW);
 
@@ -277,7 +277,7 @@ int main() {
                 DrawText("Cost: 500", purchaseShield.GetX() + purchaseShield.GetWidth() + 10, purchaseShield.GetY() + 10, 20, YELLOW);
             }
 
-            // Wy˜wietlanie koszt¢w obok przycisk¢w
+            // Wy?wietlanie koszt“w obok przycisk“w
             DrawText("Cost: 200", upgradeSpeed.GetX() + upgradeSpeed.GetWidth() + 10, upgradeSpeed.GetY() + 10, 20, YELLOW);
             DrawText("Refund: 100", downgradeSpeed.GetX() + downgradeSpeed.GetWidth() + 10, downgradeSpeed.GetY() + 10, 20, YELLOW);
             DrawText("Cost: 300", upgradeShieldTime.GetX() + upgradeShieldTime.GetWidth() + 10, upgradeShieldTime.GetY() + 10, 20, YELLOW);
@@ -305,10 +305,10 @@ int main() {
             BeginDrawing();
             ClearBackground(Dark_Green);
 
-            // Rysowanie tˆa
+            // Rysowanie t?a
             DrawTexture(backgroundTexture, 0, 0, WHITE);
 
-            // Rysowanie tytuˆu
+            // Rysowanie tytu?u
             DrawText("LEVEL COMPLETED", screenWidth / 2 - MeasureText("LEVEL COMPLETED", 60) / 2, screenHeight / 4, 60, YELLOW);
 
             DrawText("Press ENTER to continue", screenWidth / 2 - MeasureText("Press ENTER to continue", 30) / 2, screenHeight / 2, 30, YELLOW);
@@ -325,10 +325,10 @@ int main() {
             BeginDrawing();
             ClearBackground(Dark_Green);
 
-            // Rysowanie tˆa
+            // Draw background
             DrawTexture(backgroundTexture, 0, 0, WHITE);
 
-            // Rysowanie tytuˆu
+            // Draw title
             DrawText("LEVELS", screenWidth / 2 - MeasureText("LEVELS", 60) / 2, screenHeight / 4, 60, YELLOW);
 
             level1Button.Update();
@@ -346,12 +346,20 @@ int main() {
                 gameMode = 2; // Switch to game mode
             }
             if (level2Button.IsClicked()) {
-                game.SetLevel(2);
-                gameMode = 2; // Switch to game mode
+                if (game.GetLevel() >= 2) {
+                    game.SetLevel(2);
+                    gameMode = 2; // Switch to game mode
+                } else {
+                    DrawText("Complete Level 1 to unlock", level2Button.GetX() + level2Button.GetWidth() + 10, level2Button.GetY() + 10, 20, RED);
+                }
             }
             if (level3Button.IsClicked()) {
-                game.SetLevel(3);
-                gameMode = 2; // Switch to game mode
+                if (game.GetLevel() >= 3) {
+                    game.SetLevel(3);
+                    gameMode = 2; // Switch to game mode
+                } else {
+                    DrawText("Complete Level 2 to unlock", level3Button.GetX() + level3Button.GetWidth() + 10, level3Button.GetY() + 10, 20, RED);
+                }
             }
             if (backToMainMenu.IsClicked()) {
                 gameMode = 0; // Switch to menu mode

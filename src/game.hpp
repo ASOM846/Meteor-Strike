@@ -18,10 +18,6 @@ public:
     void Draw();
     void SetUseSounds(bool use);
 
-    void DisplayHighScore();
-    void DisplayMoney();
-    void DisplayObjective();
-
     int GetHighScore() const;
     int GetMoney() const;
     int GetSpeedLevel() const;
@@ -46,7 +42,7 @@ public:
     void ResumeGame();
     bool IsPaused() const;
 
-    void Reset(); // Przenie˜ t© metod© do sekcji public
+    void Reset();
 
 private:
     Spaceship spaceship;
@@ -64,12 +60,16 @@ private:
     void GameOver();
     void DisplayLives();
     void DisplayScore();
+    void DisplayHighScore();
+    void DisplayMoney();
+    void DisplayObjective();
 
     int* gameMode;
     bool useSounds = true;
     bool shieldPurchased = false;
 
     int currentLevel = 1;
+    int levelsCompleted = 1;
     float levelTime = 0.0f;
     float levelDuration = 60.0f; // Czas trwania poziomu w sekundach
 

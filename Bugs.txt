@@ -1,0 +1,2 @@
+V1.7	Known Issues
+Bug when objective is completed you are prompted to press enter to continue, but pressing enter does not take you back to main menu 25.03.2025

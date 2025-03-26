@@ -1,10 +1,58 @@
 ﻿  game.cpp
-C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(10,118): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(10,112): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(10,96): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
-C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(97,54): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(97,48): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
-C:\Users\Antoni Janik\Desktop\ship\src\game.cpp(97,47): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
-  Raylib Starter Template.vcxproj -> C:\Users\Antoni Janik\Desktop\ship\x64\Debug\Meteor-Strike.exe
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(10,118): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(10,112): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(10,96): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(108,54): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(108,48): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\game.cpp(108,47): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+  spaceship.cpp
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(154,16): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(156,30): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(158,41): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(158,31): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(158,25): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(158,19): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(159,51): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(159,31): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(159,25): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(159,19): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  (kompilowanie pliku źródłowego „src/spaceship.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103):
+      kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
+          C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(68,16):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „void std::vector<Laser,std::allocator<Laser>>::emplace_back<int,int&,Texture2D&>(int &&,int &,Texture2D &)” funkcji szablon
+              C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\src\spaceship.cpp(68,28):
+              zobacz pierwsze odwołanie do elementu „std::vector<Laser,std::allocator<Laser>>::emplace_back” w „Spaceship::FireLaser”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(909,24):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<int,int&,Texture2D&>(int &&,int &,Texture2D &)” funkcji szablon
+          with
+          [
+              _Ty=Laser
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(830,20):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<int,int&,Texture2D&>(int &&,int &,Texture2D &)” funkcji szablon
+          with
+          [
+              _Ty=Laser
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(848,27):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int,int&,Texture2D&>(_Alloc &,_Objty *const ,int &&,int &,Texture2D &)” funkcji szablon
+          with
+          [
+              _Alloc=std::allocator<Laser>,
+              _Ty=Laser,
+              _Objty=Laser
+          ]
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244: "argument": konwersja z "_Ty" do "float", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory(732,103): warning C4244:         ]
+  (kompilowanie pliku źródłowego „src/spaceship.cpp”)
+  
+  Generowanie kodu...
+  Raylib Starter Template.vcxproj -> C:\Users\Antoni Janik\Documents\GitHub\Meteor-Strike\x64\Debug\Meteor-Strike.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
