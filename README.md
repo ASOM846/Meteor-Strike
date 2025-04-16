@@ -1,20 +1,10 @@
-# Raylib Starter Template
+# Meteor Strike
 
-Setup raylib with C++ in Visual Studio 2022 Community edition.  <a href="https://youtu.be/UiZGTIYld1M">In this tutorial</a>, I guide you through the quick and easy process of setting up raylib on your Windows computer and integrating it with C++ and Visual Studio. In just 10 minutes, you'll be ready to start using raylib to create exciting games.
+Simple c++ and raylib game. 
 
-# Video Tutorial
-
-<p align="center">
-  <img src="preview.jpg" alt="" width="800">
-</p>
+# Screenshoots
 
 <p align="center">
-🎥 <a href="https://youtu.be/UiZGTIYld1M">Video Tutorial on YouTube</a>
-</p>
-
-<br>
-<br>
-<p align="center">
-| 📺 <a href="https://www.youtube.com/channel/UC3ivOTE5EgpmF2DHLBmWIWg">My YouTube Channel</a>
-| 🌍 <a href="http://www.educ8s.tv">My Website</a> | <br>
+  <img src="screenshoots/1.png" alt="" width="800">
+  <img src="screenshoots/2.png" alt="" width="800">
 </p>
