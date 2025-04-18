@@ -16,7 +16,7 @@ Spaceship::Spaceship(Texture2D shipTexture, Texture2D laserTexture, Texture2D ul
 
 Spaceship::~Spaceship()
 {
-    // Nie zwalniamy tekstur i d«wi©k¢w, poniewa¾ s¥ one zwalniane w klasie Game
+    // Nie zwalniamy tekstur i d?wi?k?w, poniewa? s? one zwalniane w klasie Game
 }
 
 void Spaceship::Update()
@@ -63,9 +63,22 @@ void Spaceship::Draw()
 void Spaceship::FireLaser() {
     double currentTime = GetTime();
     if (currentTime - lastFireTime >= 0.5) {
-        for (int i = 0; i < laserCount; ++i) {
+        if (laserCount == 1) {
+            // Fire from the center
             lasers.emplace_back(x + width / 2, y, laserTexture);
         }
+        else if (laserCount == 2) {
+            // Fire from the wings
+            lasers.emplace_back(x, y, laserTexture);               // Left wing
+            lasers.emplace_back(x + width, y, laserTexture);       // Right wing
+        }
+        else if (laserCount >= 3) {
+            // Fire from both center and wings
+            lasers.emplace_back(x + width / 2, y, laserTexture);   // Center
+            lasers.emplace_back(x, y, laserTexture);               // Left wing
+            lasers.emplace_back(x + width, y, laserTexture);       // Right wing
+        }
+
         if (this->useSounds) {
             PlaySound(laserSound);
         }
