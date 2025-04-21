@@ -105,7 +105,7 @@ void Game::DrawUI()
 {
     int screenWidth = 1920;
     int screenHeight = 1080;
-    float padding = 15.0f; // Sta?y odst?p
+    float padding = 15.0f; // Staày odst©p
 
     // Pasek zdrowia
     float healthBarWidth = (screenWidth / 2.0f) - (1.5f * padding);
@@ -119,20 +119,31 @@ void Game::DrawUI()
     DrawRectangle(healthBarX, healthBarY, healthBarWidth, healthBarHeight, GRAY);
     DrawRectangle(healthBarX, healthBarY, healthBarCurrentWidth, healthBarHeight, RED);
 
-    // Pasek regeneracji tarczy
+    // Pasek tarczy (àadowanie lub rozàadowanie)
     float shieldBarWidth = (screenWidth / 4.0f) - (1.5f * padding);
     float shieldBarHeight = healthBarHeight;
     float shieldBarX = healthBarX + healthBarWidth + padding;
     float shieldBarY = healthBarY;
 
-    float shieldCooldown = spaceship.GetShieldCooldown();
-    float shieldPercentage = (10.0f - shieldCooldown) / 10.0f;
-    float shieldBarCurrentWidth = shieldBarWidth * shieldPercentage;
+    float shieldPercentage;
+    if (spaceship.IsShieldActive()) {
+        // Discharging: Remaining shield time
+        float remainingTime = spaceship.GetShieldEndTime() - GetTime();
+        shieldPercentage = remainingTime / spaceship.GetShieldDuration();
+    }
+    else {
+        // Charging: Cooldown time
+        shieldPercentage = (10.0f - spaceship.GetShieldCooldown()) / 10.0f;
+    }
+
+    // Ensure the percentage is within bounds
+    if (shieldPercentage < 0.0f) shieldPercentage = 0.0f;
+    if (shieldPercentage > 1.0f) shieldPercentage = 1.0f;
 
     DrawRectangle(shieldBarX, shieldBarY, shieldBarWidth, shieldBarHeight, GRAY);
-    DrawRectangle(shieldBarX, shieldBarY, shieldBarCurrentWidth, shieldBarHeight, BLUE);
+    DrawRectangle(shieldBarX, shieldBarY, shieldBarWidth * shieldPercentage, shieldBarHeight, spaceship.IsShieldActive() ? BLUE : BLUE);
 
-    // Pasek ult?w
+    // Pasek ult¢w
     float ultBarWidth = shieldBarWidth;
     float ultBarHeight = healthBarHeight;
     float ultBarX = shieldBarX + shieldBarWidth + padding;
@@ -142,8 +153,9 @@ void Game::DrawUI()
     float ultBarCurrentWidth = ultBarWidth * ultPercentage;
 
     DrawRectangle(ultBarX, ultBarY, ultBarWidth, ultBarHeight, GRAY);
-    DrawRectangle(ultBarX, ultBarY, ultBarCurrentWidth, ultBarHeight, YELLOW);
+    DrawRectangle(ultBarX, ultBarY, ultBarCurrentWidth, ultBarHeight, GREEN);
 }
+
 
 void Game::UpdateUI()
 {
@@ -218,7 +230,7 @@ void Game::CheckCollisions() {
                 }
             }
             else if (asteroid.IsUltUp()) {
-                spaceship.IncreaseUlts(); // Zwi?ksz zmiennœ ults
+                spaceship.IncreaseUlts(); // Zwi?ksz zmienn“ ults
             }
             else {
                 DecreaseLives();

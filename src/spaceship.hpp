@@ -16,7 +16,7 @@ public:
     void Update();
     void Draw();
     void FireLaser();
-	void FireUltLaser();
+    void FireUltLaser();
     std::vector<Laser>& GetLasers();
     Rectangle GetRect() const;
     void SetUseSounds(bool useSounds);
@@ -29,7 +29,7 @@ public:
     void DecreaseSpeed();
     int GetSpeed() const;
 
-    int GetX() const; 
+    int GetX() const;
     int GetY() const;
     void ResetPosition();
 
@@ -49,6 +49,10 @@ public:
 
     int GetMaxUlts() const;
     void SetMaxUlts(int level);
+
+    // Expose shield duration and end time
+    double GetShieldDuration() const { return shieldDuration; }
+    double GetShieldEndTime() const { return shieldEndTime; }
 
 private:
     int x;

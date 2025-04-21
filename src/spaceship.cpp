@@ -47,17 +47,13 @@ void Spaceship::Draw()
 
     if (shieldActive) {
         DrawTexture(shieldTexture, x - 50, y - 30, WHITE);
+        DrawShieldCooldownBar(); // Draw the shield bar when the shield is active
     }
 
     for (auto& laser : lasers)
     {
         laser.Draw();
     }
-
-    //// Draw the shield cooldown bar only if the shield is purchased
-    //if (shieldPurchased && !shieldActive && shieldCooldown > 0) {
-    //    DrawShieldCooldownBar();
-    //}
 }
 
 void Spaceship::FireLaser() {
@@ -212,11 +208,27 @@ void Spaceship::DrawShieldCooldownBar()
     float barX = x - (barWidth / 2) + 25;
     float barY = y + height + 30;
 
-    float cooldownPercentage = (10.0 - shieldCooldown) / 10.0 * barWidth;
+    float shieldPercentage;
 
-    DrawRectangle(barX, barY, barWidth, barHeight, GRAY);
-    DrawRectangle(barX, barY, cooldownPercentage, barHeight, BLUE);
+    if (shieldActive) {
+        // Calculate remaining shield time percentage (discharging)
+        float remainingTime = shieldEndTime - GetTime();
+        shieldPercentage = remainingTime / shieldDuration;
+    }
+    else {
+        // Calculate cooldown percentage (charging)
+        shieldPercentage = (10.0 - shieldCooldown) / 10.0;
+    }
+
+    // Ensure the percentage is within bounds
+    if (shieldPercentage < 0.0f) shieldPercentage = 0.0f;
+    if (shieldPercentage > 1.0f) shieldPercentage = 1.0f;
+
+    // Draw the bar
+    DrawRectangle(barX, barY, barWidth, barHeight, GRAY); // Background
+    DrawRectangle(barX, barY, barWidth * shieldPercentage, barHeight, shieldActive ? BLUE : GREEN); // Discharging (blue) or charging (green)
 }
+
 
 int Spaceship::GetUlts() const
 {
