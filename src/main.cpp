@@ -19,7 +19,7 @@ int main() {
     int screenWidth = 1280;
     int screenHeight = 720;
 
-    InitWindow(screenWidth, screenHeight, "ASTEROID SHOOTER DEV BUILD Deleting boss branch NOT STABLE");
+    InitWindow(screenWidth, screenHeight, "ASTEROID SHOOTER");
 
     SetWindowSize(static_cast<int>(screenWidth), static_cast<int>(screenHeight));
     SetWindowPosition(static_cast<int>((GetMonitorWidth(0) - screenWidth) / 2), static_cast<int>((GetMonitorHeight(0) - screenHeight) / 2));
@@ -270,7 +270,7 @@ int main() {
             upgradeLaserCount.Draw();
             upgradeMaxLives.Draw();
 
-            // Wy?wietlanie informacji o poziomach i pieni’dzach w jednej linii
+            // Wy?wietlanie informacji o poziomach i pieniädzach w jednej linii
             DrawText(TextFormat("Speed Level: %i", game.GetSpeedLevel()), 10, 10, 30, YELLOW);
             DrawText(TextFormat("Shield Level: %i", game.GetShieldLevel()), 250, 10, 30, YELLOW);
             DrawText(TextFormat("Laser Count: %i", game.GetLaserCount()), 500, 10, 30, YELLOW);

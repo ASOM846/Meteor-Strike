@@ -52,7 +52,7 @@ void Game::Update()
     // Aktualizacja czasu poziomu
     levelTime += GetFrameTime();
     if (CheckObjectiveCompleted()) {
-        money += 100; // Nagroda za uko?czenie celu
+        money += 250; // Nagroda za uko?czenie celu
         GenerateObjective(); // Generowanie nowego celu
     }
     if (levelTime >= levelDuration) {
@@ -64,7 +64,6 @@ void Game::Update()
 
     UpdateUI();
 }
-
 
 void Game::Draw()
 {
@@ -105,7 +104,7 @@ void Game::DrawUI()
 {
     int screenWidth = 1920;
     int screenHeight = 1080;
-    float padding = 15.0f; // Staˆy odst©p
+    float padding = 15.0f; // Sta?y odst?p
 
     // Pasek zdrowia
     float healthBarWidth = (screenWidth / 2.0f) - (1.5f * padding);
@@ -119,7 +118,7 @@ void Game::DrawUI()
     DrawRectangle(healthBarX, healthBarY, healthBarWidth, healthBarHeight, GRAY);
     DrawRectangle(healthBarX, healthBarY, healthBarCurrentWidth, healthBarHeight, RED);
 
-    // Pasek tarczy (ˆadowanie lub rozˆadowanie)
+    // Pasek tarczy (?adowanie lub roz?adowanie)
     float shieldBarWidth = (screenWidth / 4.0f) - (1.5f * padding);
     float shieldBarHeight = healthBarHeight;
     float shieldBarX = healthBarX + healthBarWidth + padding;
@@ -143,7 +142,7 @@ void Game::DrawUI()
     DrawRectangle(shieldBarX, shieldBarY, shieldBarWidth, shieldBarHeight, GRAY);
     DrawRectangle(shieldBarX, shieldBarY, shieldBarWidth * shieldPercentage, shieldBarHeight, spaceship.IsShieldActive() ? BLUE : BLUE);
 
-    // Pasek ult¢w
+    // Pasek ult“w
     float ultBarWidth = shieldBarWidth;
     float ultBarHeight = healthBarHeight;
     float ultBarX = shieldBarX + shieldBarWidth + padding;
@@ -159,14 +158,14 @@ void Game::DrawUI()
 
 void Game::UpdateUI()
 {
-    // Mo?esz doda? tutaj logik? aktualizacji UI, je?li jest to potrzebne
+
 }
 
 void Game::InitializeAsteroids(int count)
 {
     for (int i = 0; i < count; ++i)
     {
-        asteroids.emplace_back(currentLevel); // Przekazujemy poziom do konstruktora Asteroid
+        asteroids.emplace_back(currentLevel);
     }
 }
 
@@ -196,7 +195,7 @@ void Game::CheckCollisions() {
                 }
                 else {
                     score++;
-                    money += 10;
+                    money += 2;
                     if (currentObjective == "Destroy 20 brown asteroids" &&
                         (asteroid.texture.id == Asteroid::brownBigTexture1.id ||
                             asteroid.texture.id == Asteroid::brownBigTexture2.id ||
@@ -230,7 +229,7 @@ void Game::CheckCollisions() {
                 }
             }
             else if (asteroid.IsUltUp()) {
-                spaceship.IncreaseUlts(); // Zwi?ksz zmiennÒ ults
+                spaceship.IncreaseUlts(); // Zwi?ksz zmiennŠ ults
             }
             else {
                 DecreaseLives();
