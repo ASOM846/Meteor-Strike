@@ -30,7 +30,7 @@ Meteor Strike is an action-packed C++ game powered by [raylib](https://www.rayli
 
 2. **Install dependencies**
    - **On Windows:**  
-     Download and install [raylib](https://www.raylib.com/downloads.html).  
+     Download and install [raylib](https://www.raylib.com/).  
      Make sure raylib is in your PATH or project environment.
 
 3. **Build the project**
@@ -75,4 +75,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## 📄 License
 
-This project is licensed under the License. See [LICENSE](LICENSE) for details.
+This project is licensed under the License. See [LICENSE](LICENSE.txt) for details.
